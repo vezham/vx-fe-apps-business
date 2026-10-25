@@ -1,10 +1,10 @@
 {
   "manifest_version": 1,
-  "version": "26.0.0-alpha.9",
-  "id": "vezham-demo",
-  "name": "Vezham Demo",
-  "short_name": "Demo",
-  "description": "single app to manage your Vezham Demo",
+  "version": "26.0.0-beta.2",
+  "id": "vezham-school-os",
+  "name": "Vezham School OS",
+  "short_name": "School OS",
+  "description": "single app to manage your Vezham School OS",
   "scope": ".",
   "start_url": "/?utm_source=homescreen&utm_medium=shortcut&pwa=true",
   "display": "standalone",
@@ -14,49 +14,49 @@
   "categories": ["productivity", "personalization", "utilities"],
   "icons": [
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/icons/icon-48x48.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/icons/icon-48x48.png?vx=26.0.0-beta.2",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/icons/icon-72x72.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/icons/icon-72x72.png?vx=26.0.0-beta.2",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/icons/icon-96x96.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/icons/icon-96x96.png?vx=26.0.0-beta.2",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/icons/icon-128x128.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/icons/icon-128x128.png?vx=26.0.0-beta.2",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/icons/icon-192x192.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/icons/icon-192x192.png?vx=26.0.0-beta.2",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/icons/icon-384x384.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/icons/icon-384x384.png?vx=26.0.0-beta.2",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/icons/icon-512x512.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/icons/icon-512x512.png?vx=26.0.0-beta.2",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/icons/icon-1024x1024.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/icons/icon-1024x1024.png?vx=26.0.0-beta.2",
       "sizes": "1024x1024",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "https://static.cdn.vezham.com/apps/demo/screenshots/home-512x512.png?vx=26.0.0-alpha.9",
+      "src": "https://static.cdn.vezham.com/apps/school-os/screenshots/home-512x512.png?vx=26.0.0-beta.2",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -68,7 +68,7 @@
       "url": "/?utm_source=jumplist&utm_medium=shortcut&pwa=true",
       "icons": [
         {
-          "src": "https://static.cdn.vezham.com/apps/demo/shortcuts/icon-home-192x192.png?vx=26.0.0-alpha.9",
+          "src": "https://static.cdn.vezham.com/apps/school-os/shortcuts/icon-home-192x192.png?vx=26.0.0-beta.2",
           "sizes": "192x192",
           "type": "image/png"
         }

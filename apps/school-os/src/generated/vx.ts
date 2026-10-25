@@ -5,9 +5,9 @@ export const vxMetadata = {
   "languages": [
     "en"
   ],
-  "title": "Home | Vezham Demo",
-  "description": "single app to manage your Vezham Demo",
-  "url": "https://demo.vezham.app",
+  "title": "Home | Vezham School OS",
+  "description": "single app to manage your Vezham School OS",
+  "url": "https://school-os.vezham.app",
   "manifest": "/manifest.webmanifest",
   "browserConfig": "/browserconfig.xml",
   "startUrl": "/",
@@ -16,7 +16,7 @@ export const vxMetadata = {
     "url": "https://vezham.com"
   },
   "keywords": [
-    "Vezham Demo"
+    "Vezham School OS"
   ],
   "theme": {
     "lightColor": "white",
@@ -26,196 +26,196 @@ export const vxMetadata = {
   },
   "mobileWebAppCapable": true,
   "apple": {
-    "title": "Vezham Demo",
+    "title": "Vezham School OS",
     "capable": true,
-    "touchIcon": "https://static.cdn.vezham.com/apps/demo/icons/icon-512x512.png?vx=26.0.0-alpha.9",
+    "touchIcon": "https://static.cdn.vezham.com/apps/school-os/icons/icon-512x512.png?vx=26.0.0-beta.2",
     "startupImages": [
       {
         "media": "(prefers-color-scheme: light) and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-320x568@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-320x568@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-375x667@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-375x667@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-414x736@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-414x736@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-360x780@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-360x780@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-375x812@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-375x812@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-390x844@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-390x844@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-393x852@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-393x852@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-402x874@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-402x874@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-414x896@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-414x896@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-414x896@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-414x896@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-420x912@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-420x912@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-428x926@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-428x926@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-430x932@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-430x932@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-440x956@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-440x956@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-ipad-768x1024@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-ipad-768x1024@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-ipad-834x1112@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-ipad-834x1112@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-ipad-834x1194@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-ipad-834x1194@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: light) and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-ipad-1024x1366@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-ipad-1024x1366@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-320x568@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-320x568@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-375x667@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-375x667@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-414x736@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-414x736@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-360x780@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-360x780@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-375x812@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-375x812@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-390x844@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-390x844@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-393x852@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-393x852@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-402x874@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-402x874@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-414x896@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-414x896@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-414x896@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-414x896@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-420x912@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-420x912@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-428x926@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-428x926@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-430x932@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-430x932@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-440x956@3x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-440x956@3x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-ipad-768x1024@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-ipad-768x1024@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-ipad-834x1112@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-ipad-834x1112@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-ipad-834x1194@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-ipad-834x1194@2x.png?vx=26.0.0-beta.2"
       },
       {
         "media": "(prefers-color-scheme: dark) and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)",
-        "url": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-ipad-1024x1366@2x.png?vx=26.0.0-alpha.9"
+        "url": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-ipad-1024x1366@2x.png?vx=26.0.0-beta.2"
       }
     ]
   },
   "icons": {
-    "faviconLight": "https://static.cdn.vezham.com/apps/demo/favicon-light.png?vx=26.0.0-alpha.9",
-    "faviconDark": "https://static.cdn.vezham.com/apps/demo/favicon-dark.png?vx=26.0.0-alpha.9",
-    "maskIcon": "https://static.cdn.vezham.com/apps/demo/safari-pinned-tab.svg?vx=26.0.0-alpha.9"
+    "faviconLight": "https://static.cdn.vezham.com/apps/school-os/favicon-light.png?vx=26.0.0-beta.2",
+    "faviconDark": "https://static.cdn.vezham.com/apps/school-os/favicon-dark.png?vx=26.0.0-beta.2",
+    "maskIcon": "https://static.cdn.vezham.com/apps/school-os/safari-pinned-tab.svg?vx=26.0.0-beta.2"
   },
   "microsoft": {
-    "applicationName": "Vezham Demo",
+    "applicationName": "Vezham School OS",
     "config": "/browserconfig.xml",
     "startUrl": "/"
   },
   "openGraph": {
     "type": "website",
-    "title": "Vezham Demo",
-    "description": "single app to manage your Vezham Demo",
+    "title": "Vezham School OS",
+    "description": "single app to manage your Vezham School OS",
     "image": "/og/image.png",
     "imageSource": "path",
-    "url": "https://demo.vezham.app"
+    "url": "https://school-os.vezham.app"
   },
   "twitter": {
     "creator": "@vezham",
     "site": "@vezham",
-    "title": "Vezham Demo",
-    "description": "single app to manage your Vezham Demo",
+    "title": "Vezham School OS",
+    "description": "single app to manage your Vezham School OS",
     "image": "/og/image.png",
-    "url": "https://demo.vezham.app",
+    "url": "https://school-os.vezham.app",
     "card": "summary_large_image"
   }
 } as const
 
 export const vxCore = {
-  "id": "vezham-demo",
-  "name": "Vezham Demo",
-  "shortName": "Demo",
-  "version": "26.0.0-alpha.9",
-  "description": "Single app to manage your Vezham Demo",
+  "id": "vezham-school-os",
+  "name": "Vezham School OS",
+  "shortName": "School OS",
+  "version": "26.0.0-beta.2",
+  "description": "Single app to manage your Vezham School OS",
   "publisher": {
     "name": "Vezham Technologies Private Limited",
     "url": "https://vezham.com"
   },
-  "url": "https://demo.vezham.app"
+  "url": "https://school-os.vezham.app"
 } as const
 
 
@@ -244,14 +244,14 @@ export const tanstackHead = {
     },
     {
       "name": "keywords",
-      "content": "Vezham Demo"
+      "content": "Vezham School OS"
     },
     {
-      "title": "Home | Vezham Demo"
+      "title": "Home | Vezham School OS"
     },
     {
       "name": "description",
-      "content": "single app to manage your Vezham Demo"
+      "content": "single app to manage your Vezham School OS"
     },
     {
       "name": "theme-color",
@@ -279,7 +279,7 @@ export const tanstackHead = {
     },
     {
       "name": "apple-mobile-web-app-title",
-      "content": "Vezham Demo"
+      "content": "Vezham School OS"
     },
     {
       "name": "apple-mobile-web-app-capable",
@@ -287,7 +287,7 @@ export const tanstackHead = {
     },
     {
       "name": "application-name",
-      "content": "Vezham Demo"
+      "content": "Vezham School OS"
     },
     {
       "name": "msapplication-config",
@@ -303,11 +303,11 @@ export const tanstackHead = {
     },
     {
       "property": "og:title",
-      "content": "Vezham Demo"
+      "content": "Vezham School OS"
     },
     {
       "property": "og:description",
-      "content": "single app to manage your Vezham Demo"
+      "content": "single app to manage your Vezham School OS"
     },
     {
       "property": "og:image",
@@ -315,7 +315,7 @@ export const tanstackHead = {
     },
     {
       "property": "og:url",
-      "content": "https://demo.vezham.app"
+      "content": "https://school-os.vezham.app"
     },
     {
       "name": "twitter:creator",
@@ -327,11 +327,11 @@ export const tanstackHead = {
     },
     {
       "name": "twitter:title",
-      "content": "Vezham Demo"
+      "content": "Vezham School OS"
     },
     {
       "name": "twitter:description",
-      "content": "single app to manage your Vezham Demo"
+      "content": "single app to manage your Vezham School OS"
     },
     {
       "name": "twitter:image",
@@ -339,7 +339,7 @@ export const tanstackHead = {
     },
     {
       "name": "twitter:url",
-      "content": "https://demo.vezham.app"
+      "content": "https://school-os.vezham.app"
     },
     {
       "name": "twitter:card",
@@ -355,243 +355,243 @@ export const tanstackHead = {
       "rel": "icon",
       "type": "image/x-icon",
       "media": "(prefers-color-scheme: light)",
-      "href": "https://static.cdn.vezham.com/apps/demo/favicon-light.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/favicon-light.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "icon",
       "type": "image/x-icon",
       "media": "(prefers-color-scheme: dark)",
-      "href": "https://static.cdn.vezham.com/apps/demo/favicon-dark.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/favicon-dark.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "icon",
       "media": "(prefers-color-scheme: light)",
-      "href": "https://static.cdn.vezham.com/apps/demo/favicon-light.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/favicon-light.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "icon",
       "media": "(prefers-color-scheme: dark)",
-      "href": "https://static.cdn.vezham.com/apps/demo/favicon-dark.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/favicon-dark.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "icon",
       "type": "image/svg+xml",
       "media": "(prefers-color-scheme: light)",
-      "href": "https://static.cdn.vezham.com/apps/demo/safari-pinned-tab.svg?vx=26.0.0-alpha.9",
+      "href": "https://static.cdn.vezham.com/apps/school-os/safari-pinned-tab.svg?vx=26.0.0-beta.2",
       "color": "black"
     },
     {
       "rel": "icon",
       "type": "image/svg+xml",
       "media": "(prefers-color-scheme: dark)",
-      "href": "https://static.cdn.vezham.com/apps/demo/safari-pinned-tab.svg?vx=26.0.0-alpha.9",
+      "href": "https://static.cdn.vezham.com/apps/school-os/safari-pinned-tab.svg?vx=26.0.0-beta.2",
       "color": "white"
     },
     {
       "rel": "shortcut icon",
       "media": "(prefers-color-scheme: light)",
-      "href": "https://static.cdn.vezham.com/apps/demo/favicon-light.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/favicon-light.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "shortcut icon",
       "media": "(prefers-color-scheme: dark)",
-      "href": "https://static.cdn.vezham.com/apps/demo/favicon-dark.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/favicon-dark.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "mask-icon",
       "media": "(prefers-color-scheme: light)",
-      "href": "https://static.cdn.vezham.com/apps/demo/safari-pinned-tab.svg?vx=26.0.0-alpha.9",
+      "href": "https://static.cdn.vezham.com/apps/school-os/safari-pinned-tab.svg?vx=26.0.0-beta.2",
       "color": "black"
     },
     {
       "rel": "mask-icon",
       "media": "(prefers-color-scheme: dark)",
-      "href": "https://static.cdn.vezham.com/apps/demo/safari-pinned-tab.svg?vx=26.0.0-alpha.9",
+      "href": "https://static.cdn.vezham.com/apps/school-os/safari-pinned-tab.svg?vx=26.0.0-beta.2",
       "color": "white"
     },
     {
       "rel": "apple-touch-icon",
-      "href": "https://static.cdn.vezham.com/apps/demo/icons/icon-512x512.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/icons/icon-512x512.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-320x568@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-320x568@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-375x667@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-375x667@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-414x736@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-414x736@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-360x780@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-360x780@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-375x812@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-375x812@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-390x844@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-390x844@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-393x852@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-393x852@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-402x874@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-402x874@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-414x896@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-414x896@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-414x896@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-414x896@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-420x912@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-420x912@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-428x926@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-428x926@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-430x932@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-430x932@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-iphone-440x956@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-iphone-440x956@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-ipad-768x1024@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-ipad-768x1024@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-ipad-834x1112@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-ipad-834x1112@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-ipad-834x1194@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-ipad-834x1194@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: light) and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/light/splash-ipad-1024x1366@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/light/splash-ipad-1024x1366@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-320x568@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-320x568@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-375x667@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-375x667@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-414x736@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-414x736@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-360x780@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-360x780@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-375x812@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-375x812@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-390x844@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-390x844@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-393x852@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-393x852@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-402x874@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-402x874@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-414x896@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-414x896@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-414x896@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-414x896@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-420x912@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-420x912@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-428x926@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-428x926@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-430x932@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-430x932@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-iphone-440x956@3x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-iphone-440x956@3x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-ipad-768x1024@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-ipad-768x1024@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-ipad-834x1112@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-ipad-834x1112@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-ipad-834x1194@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-ipad-834x1194@2x.png?vx=26.0.0-beta.2"
     },
     {
       "rel": "apple-touch-startup-image",
       "media": "(prefers-color-scheme: dark) and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)",
-      "href": "https://static.cdn.vezham.com/apps/demo/splashscreens/dark/splash-ipad-1024x1366@2x.png?vx=26.0.0-alpha.9"
+      "href": "https://static.cdn.vezham.com/apps/school-os/splashscreens/dark/splash-ipad-1024x1366@2x.png?vx=26.0.0-beta.2"
     }
   ]
 }
