@@ -1,0 +1,56 @@
+# @vx/INFO: @vx/ci
+name: 🚀 School OS
+
+run-name: >-
+  ${{
+    github.event_name == 'schedule' && '🚀 BnD • 🕒 Scheduled' ||
+    github.event_name == 'workflow_dispatch' && '🚀 BnD • ▶️ On demand' ||
+    ''
+  }}
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - timeline
+      - next**
+      - feat**
+      - fix**
+    paths:
+      - '.github/workflows/school-os.yml'
+      - 'vx/handbooks/ci.md'
+      # - 'packages/**'
+      - 'apps/school-os/**'
+
+jobs:
+  run_if:
+    runs-on: ubuntu-latest
+    outputs:
+      all: ${{ steps.filter.outputs.all }}
+      deploy: ${{ steps.filter.outputs.deploy }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v4
+        id: filter
+        with:
+          base: ${{ github.ref }}
+          filters: |
+            all:
+              - '.github/workflows/school-os.yml'
+              - 'vx/handbooks/ci.md'
+            deploy:
+              - 'apps/school-os/**'
+              - 'packages/**'
+
+  deploy:
+    needs: run_if
+    permissions:
+      contents: write # Publish the deployment URLs as a commit comment.
+      statuses: write # Record deployment history for the shared commit tracker.
+    if: ${{ needs.run_if.outputs.all == 'true' || needs.run_if.outputs.deploy == 'true' }}
+    name: school-os | ${{ github.ref_name }}
+    uses: vezham/vx-fe-deployer/.github/workflows/web-app.yml@timeline
+    secrets: inherit
+    with:
+      APP: school-os
+      CALLER: ${{ github.ref_name }}
