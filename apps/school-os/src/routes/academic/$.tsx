@@ -1,14 +1,14 @@
+import { PageContent } from '@component/page-content'
+import {
+  getDefaultDestination,
+  getNavigationPage
+} from '@component/section-navigation'
 import { createFileRoute, redirect } from '@tanstack/react-router'
 
 import {
   getClassFilterSearch,
   getClassFiltersFromSearch
-} from '@pages/classes/classes-content/utils'
-import ClassesPageContent from '@pages/classes/content'
-import {
-  getDefaultDestination,
-  getNavigationPage
-} from '@pages/classes/navigation'
+} from '@pages/academic/classes/all-classes/components/utils'
 
 export const Route = createFileRoute('/academic/$')({
   validateSearch: (search: Record<string, unknown>) =>
@@ -18,5 +18,5 @@ export const Route = createFileRoute('/academic/$')({
     if (page.children?.length)
       throw redirect({ to: getDefaultDestination(page), replace: true })
   },
-  component: ClassesPageContent
+  component: PageContent
 })

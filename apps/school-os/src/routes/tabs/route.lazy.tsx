@@ -1,7 +1,6 @@
+import { AppSectionLayout } from '@component/app-section-layout'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
-import ClassesLayout from '@pages/classes'
-
 export const Route = createLazyFileRoute('/tabs')({
-  component: () => <ClassesLayout menuKey="tabs" />
+  component: () => <AppSectionLayout menuKey="tabs" />
 })

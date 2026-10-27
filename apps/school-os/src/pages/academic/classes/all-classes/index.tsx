@@ -1,3 +1,5 @@
+import { usePageSearch } from '@component/page-search-context'
+import { EntityActiveFilters, type EntityFilter } from '@shared/record-list'
 import { useNavigate, useSearch } from '@tanstack/react-router'
 import {
   useCallback,
@@ -8,13 +10,7 @@ import {
 } from 'react'
 import type { Selection } from 'react-aria-components'
 
-import {
-  Chip,
-  CloseButton,
-  type SortDescriptor,
-  toast,
-  useMediaQuery
-} from '@vezham/react-v3'
+import { type SortDescriptor, toast, useMediaQuery } from '@vezham/react-v3'
 import { useSectionToolbarContent } from '@vezham/react/layouts/section'
 import { useMobileControls } from '@vezham/react/mobile-controls'
 import { useToolbarAction } from '@vezham/react/toolbar-actions'
@@ -24,24 +20,24 @@ import {
   ClassesPagination,
   ClassesTable,
   getSelectedClassIds
-} from './classes-content/classes-table'
+} from './components/classes-table'
 import {
   classColumnOptions,
   initialClasses,
   pageSizeOptions
-} from './classes-content/data'
-import { ClassDetailsSheet } from './classes-content/details-sheet'
-import { ClassFormSheet } from './classes-content/form-sheet'
+} from './components/data'
+import { ClassDetailsSheet } from './components/details-sheet'
+import { ClassFormSheet } from './components/form-sheet'
 import {
   ClassesHeaderToolbar,
   ClassesMobileToolbar,
   type ClassesToolbarProps
-} from './classes-content/toolbar'
+} from './components/toolbar'
 import type {
   ClassColumnKey,
   ClassFilters,
   ClassRecord
-} from './classes-content/types'
+} from './components/types'
 import {
   compareClassNames,
   createEmptyClassFilters,
@@ -51,54 +47,20 @@ import {
   getClassLabel,
   isSortField,
   matchesClassSearch
-} from './classes-content/utils'
-import { useClassesSearch } from './search-context'
+} from './components/utils'
 
 type ClassFilterKey = keyof ClassFilters
 
-const filterLabels: Record<ClassFilterKey, string> = {
-  code: 'Code',
-  name: 'Name',
-  status: 'Status'
-}
-
-const ActiveClassFilters = ({
-  filters: activeFilters,
-  onRemove: removeFilter
-}: {
-  filters: { key: ClassFilterKey; value: string }[]
-  onRemove: (key: ClassFilterKey) => void
-}) =>
-  activeFilters.length > 0 && (
-    <div
-      role="group"
-      aria-label="Active class filters"
-      className="flex flex-wrap items-center gap-2">
-      {activeFilters.map(filter => {
-        const label = `${filterLabels[filter.key]}: ${filter.value}`
-
-        return (
-          <Chip
-            key={filter.key}
-            color="default"
-            variant="soft"
-            className="gap-1.5">
-            <Chip.Label>{label}</Chip.Label>
-            <CloseButton
-              aria-label={`Remove ${label} filter`}
-              className="h-5 min-h-5 w-5 min-w-5 rounded-full p-0"
-              onPress={() => removeFilter(filter.key)}
-            />
-          </Chip>
-        )
-      })}
-    </div>
-  )
+const classFilterDefinitions: readonly EntityFilter<ClassFilterKey>[] = [
+  { id: 'code', label: 'Code', options: [] },
+  { id: 'name', label: 'Name', options: [] },
+  { id: 'status', label: 'Status', options: [] }
+]
 
 const useClassesContent = () => {
   const navigate = useNavigate()
   const search = useSearch({ strict: false })
-  const { query: searchQuery } = useClassesSearch()
+  const { query: searchQuery } = usePageSearch()
   const filtersFromSearch = useMemo(
     () =>
       getClassFiltersFromSearch({
@@ -145,16 +107,6 @@ const useClassesContent = () => {
   const [isCreateClassOpen, setIsCreateClassOpen] = useState(false)
   const { setIsFooterHidden } = useMobileControls()
   const isCompactToolbar = useMediaQuery('(max-width: 767px)')
-  const activeFilters = useMemo(
-    () =>
-      (Object.keys(filters) as ClassFilterKey[]).flatMap(key => {
-        const value = filters[key]
-
-        return value ? [{ key, value }] : []
-      }),
-    [filters]
-  )
-
   useEffect(() => {
     const media = window.matchMedia('(max-width: 767px)')
     const closeToolbarOverlays = () => {
@@ -432,7 +384,7 @@ const useClassesContent = () => {
   useSectionToolbarContent(toolbarContent)
 
   return {
-    activeFilters,
+    filters,
     removeFilter,
     pageClasses,
     selectedKeys,
@@ -466,9 +418,10 @@ const ClassesContent = () => {
   const model = useClassesContent()
 
   return (
-    <section className="demo-classes-content relative flex h-full min-h-0 flex-1 flex-col gap-4">
-      <ActiveClassFilters
-        filters={model.activeFilters}
+    <section className="academic-classes-content relative flex h-full min-h-0 flex-1 flex-col gap-4">
+      <EntityActiveFilters
+        filters={classFilterDefinitions}
+        values={model.filters}
         onRemove={model.removeFilter}
       />
 

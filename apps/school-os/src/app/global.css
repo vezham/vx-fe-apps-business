@@ -2,58 +2,92 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-.demo-classes-grid {
-  flex: 1;
+/* Agenda content keeps timetable labels readable in dense calendar slots. */
+[data-timetable-agenda] .agenda__event {
+  padding: 0.25rem 0.375rem !important;
+}
+
+[data-timetable-agenda] .agenda__event-title,
+[data-timetable-agenda] .agenda__event-time {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+[data-timetable-agenda] .agenda__month-cell {
+  min-height: 11rem;
+}
+
+[data-timetable-agenda] .agenda__month-event {
+  min-height: 3.375rem;
+  padding-block: 0.25rem;
+}
+
+.academic-classes-grid {
   max-height: none;
   min-height: 0;
 }
 
-.demo-classes-grid .table__header,
-.demo-classes-grid .table__header > tr,
-.demo-classes-grid .table__header > tr > .table__column:first-child,
-.demo-classes-grid .table__header > tr > .table__column:last-child {
+.academic-entity-table__resizable-container {
+  width: 100%;
+}
+
+.academic-classes-grid .table__resizable-container,
+.academic-entity-table__content {
+  width: 100%;
+}
+
+.academic-classes-grid .table__content,
+.academic-entity-table__content {
+  width: 100% !important;
+}
+
+.academic-classes-grid .table__header,
+.academic-classes-grid .table__header > tr,
+.academic-classes-grid .table__header > tr > .table__column:first-child,
+.academic-classes-grid .table__header > tr > .table__column:last-child {
   border-radius: 0;
 }
 
-.demo-classes-grid .table__body tr:first-child td:first-child,
-.demo-classes-grid .table__body tr:first-child td:last-child,
-.demo-classes-grid .table__body tr:last-child td:first-child,
-.demo-classes-grid .table__body tr:last-child td:last-child {
+.academic-classes-grid .table__body tr:first-child td:first-child,
+.academic-classes-grid .table__body tr:first-child td:last-child,
+.academic-classes-grid .table__body tr:last-child td:first-child,
+.academic-classes-grid .table__body tr:last-child td:last-child {
   border-radius: 0;
 }
 
-.demo-classes-grid .table__scroll-container {
+.academic-classes-grid .table__scroll-container {
   min-height: 0;
   overflow: auto;
 }
 
-.demo-classes-grid .table__cell {
+.academic-classes-grid .table__cell {
   padding-block: 0.25rem;
   padding-inline: 0.5rem;
 }
 
-.demo-classes-grid .table__column {
+.academic-classes-grid .table__column {
   padding-block: 0.625rem;
   padding-inline: 0.5rem;
 }
 
-.demo-classes-grid .checkbox__control {
+.academic-classes-grid .checkbox__control {
   background-color: var(--surface);
   border-color: var(--border);
   border-width: var(--border-width);
 }
 
-.demo-classes-content > [data-slot='action-bar'] {
+.academic-classes-content > [data-slot='action-bar'] {
   bottom: 1.5rem;
   position: absolute;
 }
 
 @media (width < 40rem) {
-  .demo-classes-grid {
+  .academic-classes-grid {
     max-height: calc(100% - 8rem);
   }
 
-  .demo-classes-content > [data-slot='action-bar'] {
+  .academic-classes-content > [data-slot='action-bar'] {
     bottom: 1rem;
   }
 }

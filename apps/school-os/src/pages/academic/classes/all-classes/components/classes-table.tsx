@@ -112,8 +112,8 @@ export const ClassesTable = ({
     )
 
   return (
-    <Table className="demo-classes-grid min-h-0 min-w-0">
-      <Table.ScrollContainer className="h-full min-h-0 overflow-auto">
+    <Table className="academic-classes-grid min-h-0 min-w-0">
+      <Table.ScrollContainer className="min-h-0 overflow-auto">
         <Table.ResizableContainer>
           <Table.Content
             aria-label="All classes"
@@ -130,9 +130,11 @@ export const ClassesTable = ({
                 className="bg-surface-secondary sticky left-0 z-[5]"
                 width={40}>
                 <Checkbox aria-label="Select all classes" slot="selection">
-                  <Checkbox.Control>
-                    <Checkbox.Indicator />
-                  </Checkbox.Control>
+                  <Checkbox.Content>
+                    <Checkbox.Control>
+                      <Checkbox.Indicator />
+                    </Checkbox.Control>
+                  </Checkbox.Content>
                 </Checkbox>
               </Table.Column>
               {visibleClassColumns.map(column => (
@@ -188,9 +190,11 @@ export const ClassesTable = ({
                       aria-label={`Select class ${classRecord.id}`}
                       slot="selection"
                       onClick={event => event.stopPropagation()}>
-                      <Checkbox.Control>
-                        <Checkbox.Indicator />
-                      </Checkbox.Control>
+                      <Checkbox.Content>
+                        <Checkbox.Control>
+                          <Checkbox.Indicator />
+                        </Checkbox.Control>
+                      </Checkbox.Content>
                     </Checkbox>
                   </Table.Cell>
                   {visibleClassColumns.map(column => (

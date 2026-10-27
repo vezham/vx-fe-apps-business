@@ -41,9 +41,7 @@ describe('Academic navigation', () => {
       const toolbar = screen.getByRole('group', { name: 'Toolbar actions' })
       fireEvent.click(screen.getByRole('tab', { name: 'Schedule' }))
       await waitFor(() =>
-        expect(screen.getByRole('tabpanel').textContent).toContain(
-          '/academic/classes/schedule'
-        )
+        expect(screen.getByRole('grid', { name: 'Schedules' })).toBeTruthy()
       )
 
       fireEvent.click(
@@ -51,7 +49,7 @@ describe('Academic navigation', () => {
       )
       expect(screen.getByRole('link', { name: 'Exam Results' })).toBeTruthy()
       fireEvent.click(within(sidebar).getByRole('link', { name: 'Class Room' }))
-      await screen.findByText('/academic/classroom')
+      await screen.findByRole('grid', { name: 'Classrooms' })
       expect(screen.getByRole('group', { name: 'Toolbar actions' })).toBe(
         toolbar
       )
@@ -63,9 +61,7 @@ describe('Academic navigation', () => {
       await screen.findByRole('link', { name: 'Exam' })
       fireEvent.click(screen.getByRole('link', { name: 'Exam Results' }))
       await waitFor(() =>
-        expect(
-          screen.getByText('/academic/examinations/exam-results')
-        ).toBeTruthy()
+        expect(screen.getByRole('grid', { name: 'Exam Results' })).toBeTruthy()
       )
       expect(
         screen
@@ -92,9 +88,7 @@ describe('Academic navigation', () => {
     await renderApp('/academic/examinations/grades')
     const grades = await screen.findByRole('link', { name: 'Grades' })
     expect(grades.getAttribute('aria-current')).toBe('page')
-    expect(
-      await screen.findByText('/academic/examinations/grades')
-    ).toBeTruthy()
+    expect(await screen.findByRole('grid', { name: 'Grades' })).toBeTruthy()
     expect(screen.queryByRole('tablist')).toBeNull()
   })
 

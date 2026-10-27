@@ -11,13 +11,13 @@ import {
 
 import { navigationItems } from '@generated/navigation'
 
-import { getToolbarActions } from './actions'
-import { type MenuKey, getNavigationPage } from './navigation'
-import { ClassesSearchContext } from './search-context'
+import { PageSearchContext } from '../page-search-context'
+import { type MenuKey, getNavigationPage } from '../section-navigation'
+import { getToolbarActions } from '../toolbar-actions'
 
 type Props = { menuKey: MenuKey }
 
-const ClassesLayout = ({ menuKey }: Props) => {
+export const AppSectionLayout = ({ menuKey }: Props) => {
   // vx-bot/NOTE: Read the mounted child route, not a destination URL from a navigation in progress.
   const pathname = useChildMatches({
     select: matches =>
@@ -25,25 +25,24 @@ const ClassesLayout = ({ menuKey }: Props) => {
         .reverse()
         .find(match => match.pathname.startsWith(`/${menuKey}/`))?.pathname
   })
-  return pathname ? (
-    <ClassesSection menuKey={menuKey} pathname={pathname} />
-  ) : null
+  return pathname ? <AppSection menuKey={menuKey} pathname={pathname} /> : null
 }
 
-const ClassesSection = ({
-  menuKey,
-  pathname
-}: Props & { pathname: string }) => {
+const AppSection = ({ menuKey, pathname }: Props & { pathname: string }) => {
   const { items, section, page, tabs } = getNavigationPage(menuKey, pathname)
 
   const [search, setSearch] = useState('')
   const toolbar = getNavigationToolbar(navigationItems, pathname)
   const { emit } = useToolbarActions()
-  const actions = getToolbarActions(
+  const navigationActions = getToolbarActions(
     toolbar,
     { pageKey: page.key, pathname },
     emit
   )
+  const actions =
+    menuKey === 'academic'
+      ? { ...navigationActions, filter: false, sort: false }
+      : navigationActions
   useToolbarAction('sync', () => {
     // vx-bot/TODO: Replace this notice with server synchronization.
     toast.info('Server sync is not implemented yet.')
@@ -59,7 +58,7 @@ const ClassesSection = ({
   )
 
   return (
-    <ClassesSearchContext.Provider value={searchContext}>
+    <PageSearchContext.Provider value={searchContext}>
       <SectionLayout
         sectionKey={menuKey === 'tabs' ? menuKey : section.key}
         title={menuKey === 'tabs' ? 'Demo' : section.title}
@@ -83,8 +82,6 @@ const ClassesSection = ({
         }>
         <Outlet />
       </SectionLayout>
-    </ClassesSearchContext.Provider>
+    </PageSearchContext.Provider>
   )
 }
-
-export default ClassesLayout

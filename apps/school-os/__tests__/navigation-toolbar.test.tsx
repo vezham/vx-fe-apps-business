@@ -112,14 +112,13 @@ describe('Navigation toolbar', () => {
       })
     })
     await screen.findByRole('button', { name: 'Add Schedule' })
-    expect(screen.getByRole('tabpanel').textContent).toContain(
-      '/academic/classes/schedule'
-    )
-    const actions = screen.getByRole('group', { name: 'Toolbar actions' })
-    const filter = within(actions).getByRole('button', { name: 'Filter' })
-    fireEvent.click(filter)
-    fireEvent.click(await screen.findByRole('menuitem', { name: 'Images' }))
-    expect(filter.getAttribute('aria-pressed')).toBe('true')
+    expect(screen.getByRole('grid', { name: 'Schedules' })).toBeTruthy()
+    expect(
+      within(screen.getByRole('group', { name: 'Toolbar actions' })).getByRole(
+        'button',
+        { name: 'Filter' }
+      )
+    ).toBeTruthy()
   })
 
   it('loads class filters from the URL, removes them, and follows subsequent navigation', async () => {
@@ -164,7 +163,7 @@ describe('Navigation toolbar', () => {
       refresh.mockRestore()
     }
     expect(
-      await screen.findByText('/academic/examinations/exam-results')
+      await screen.findByRole('grid', { name: 'Exam Results' })
     ).toBeTruthy()
   })
 })

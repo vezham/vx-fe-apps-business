@@ -420,6 +420,7 @@ const ClassesToolbarControls = ({
     role="group"
     aria-label="Class table actions"
     className="flex items-center gap-1">
+    <Separator orientation="vertical" className="h-8" />
     <ClassFilterDropdown
       classCodeOptions={classCodeOptions}
       classNameOptions={classNameOptions}
@@ -446,6 +447,7 @@ const ClassesToolbarControls = ({
       onOpenChange={onSortOpenChange}
       onSortChange={onSortChange}
     />
+    <Separator orientation="vertical" className="h-8" />
   </div>
 )
 

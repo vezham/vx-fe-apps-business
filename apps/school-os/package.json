@@ -4,10 +4,12 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@internationalized/date": "catalog:",
     "@vezham/env": "catalog:",
     "@vezham/react": "catalog:",
     "@vezham/start": "catalog:",
-    "@vezham/template": "catalog:"
+    "@vezham/template": "catalog:",
+    "@vezham/utils": "catalog:"
   },
   "devDependencies": {
     "react-aria-components": "catalog:"

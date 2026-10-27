@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import type { NavigationToolbar } from '@vezham/react'
 
-import { getToolbarActions } from './actions'
+import { getToolbarActions } from './index'
 
 describe('getToolbarActions', () => {
   it('removes only view actions explicitly disabled in navigation metadata', () => {

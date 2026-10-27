@@ -17,6 +17,8 @@
       "@src/*": ["./src/*"],
       "@app/*": ["./src/app/*"],
       "@pages/*": ["./src/pages/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@component/*": ["./src/component/*"],
       "@components/*": ["./src/components/*"],
       "@store/*": ["./src/store/*"],
       "@generated/*": ["./src/generated/*"]

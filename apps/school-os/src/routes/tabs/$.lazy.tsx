@@ -1,7 +1,6 @@
+import { PageContent } from '@component/page-content'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
-import ClassesPageContent from '@pages/classes/content'
-
 export const Route = createLazyFileRoute('/tabs/$')({
-  component: ClassesPageContent
+  component: PageContent
 })

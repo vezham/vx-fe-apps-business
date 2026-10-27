@@ -1,17 +1,10 @@
+import { DetailTabs } from '@component/detail-tabs'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
-import type { Key } from 'react-aria-components'
 
 import { Book, Pen } from '@vezham/icons-react'
 import { Sheet } from '@vezham/react-pro-v3'
-import {
-  Button,
-  Chip,
-  Surface,
-  Tabs,
-  Tooltip,
-  useMediaQuery
-} from '@vezham/react-v3'
+import { Button, Chip, Surface, Tooltip, useMediaQuery } from '@vezham/react-v3'
 
 import { classDetailTabs } from './data'
 import type { ClassDetailTab, ClassRecord } from './types'
@@ -171,18 +164,30 @@ const ClassDetailRailGroup = ({
 
 type ClassDetailsSummaryProps = {
   classRecord: ClassRecord
+  onEdit?: () => void
   onTabChange: (tab: ClassDetailTab) => void
 }
 
 const ClassDetailsSummary = ({
   classRecord,
+  onEdit,
   onTabChange
 }: ClassDetailsSummaryProps) => (
   <>
     <section>
-      <p className="text-muted text-xs font-medium tracking-wide">
-        Class details
-      </p>
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-muted text-base font-semibold">Class details</p>
+        {onEdit && (
+          <Button
+            aria-label={`Edit Class ${classRecord.className}`}
+            size="sm"
+            variant="secondary"
+            onPress={onEdit}>
+            <Pen size={16} aria-hidden="true" />
+            Edit
+          </Button>
+        )}
+      </div>
       <dl className="mt-3 flex flex-col gap-3">
         <ClassDetailRailRow
           label="Class"
@@ -238,16 +243,16 @@ const ClassDetailsSheetContent = ({
   onEdit,
   onOpenChange
 }: ClassDetailsSheetProps) => {
-  const isCompactSheet = useMediaQuery('(width < 768px)')
+  const isCompactSheet = useMediaQuery('(width < 768px)', {
+    initializeWithValue: false
+  })
   const [tab, setTab] = useState<ClassDetailTab>('overview')
   const detailTabs = isCompactSheet
     ? [{ id: 'home' as const, label: 'Home' }, ...classDetailTabs]
     : classDetailTabs
 
-  const handleTabChange = (key: Key) => {
-    const nextTab = String(key)
-
-    if (isClassDetailTab(nextTab)) setTab(nextTab)
+  const handleTabChange = (key: string) => {
+    if (isClassDetailTab(key)) setTab(key)
   }
 
   return (
@@ -276,31 +281,13 @@ const ClassDetailsSheetContent = ({
                   ? `Class ${classRecord.className} details`
                   : 'Class details'}
               </Sheet.Heading>
-              <Tabs
-                className="min-w-0 flex-1"
+              <DetailTabs
+                ariaLabel="Class sections"
+                idPrefix="class-details"
                 selectedKey={tab}
-                onSelectionChange={handleTabChange}>
-                <Tabs.ListContainer className="overflow-x-auto">
-                  <Tabs.List aria-label="Class sections">
-                    {detailTabs.map(item => (
-                      <Tabs.Tab key={item.id} id={item.id}>
-                        {item.label}
-                        <Tabs.Indicator />
-                      </Tabs.Tab>
-                    ))}
-                  </Tabs.List>
-                </Tabs.ListContainer>
-              </Tabs>
-              {classRecord && (
-                <Button
-                  size="sm"
-                  variant="secondary"
-                  className="hidden md:inline-flex"
-                  onPress={() => onEdit(classRecord)}>
-                  <Pen size={16} aria-hidden="true" />
-                  Edit
-                </Button>
-              )}
+                tabs={detailTabs}
+                onSelectionChange={handleTabChange}
+              />
             </Sheet.Header>
             <Sheet.Body className="min-h-0 flex-1 overflow-hidden p-0">
               {classRecord && (
@@ -331,6 +318,7 @@ const ClassDetailsSheetContent = ({
                     <div className="flex flex-col gap-8">
                       <ClassDetailsSummary
                         classRecord={classRecord}
+                        onEdit={() => onEdit(classRecord)}
                         onTabChange={setTab}
                       />
                     </div>
