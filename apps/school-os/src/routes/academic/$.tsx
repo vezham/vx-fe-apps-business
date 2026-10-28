@@ -15,6 +15,13 @@ export const Route = createFileRoute('/academic/$')({
     getClassFilterSearch(getClassFiltersFromSearch(search)),
   beforeLoad: ({ location }) => {
     const { page } = getNavigationPage('academic', location.pathname)
+    if (page.key === 'timetable')
+      throw redirect({
+        to: '/academic/$',
+        params: { _splat: 'timetable/week' },
+        search: { code: undefined, name: undefined, status: undefined },
+        replace: true
+      })
     if (page.children?.length)
       throw redirect({ to: getDefaultDestination(page), replace: true })
   },

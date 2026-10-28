@@ -92,6 +92,21 @@ describe('Academic navigation', () => {
     expect(screen.queryByRole('tablist')).toBeNull()
   })
 
+  it('renders timetable views as responsive section tabs', async () => {
+    await renderApp('/academic/timetable')
+
+    const week = await screen.findByRole('tab', { name: 'Week' })
+    expect(week.getAttribute('aria-selected')).toBe('true')
+
+    fireEvent.click(screen.getByRole('tab', { name: 'Month' }))
+    await waitFor(() =>
+      expect(screen.getByRole('tab', { name: 'Month' })).toHaveAttribute(
+        'aria-selected',
+        'true'
+      )
+    )
+  })
+
   it('shows and hides the mobile sidebar with its shortcut', async () => {
     await renderApp('/academic/classes/allclasses')
     await screen.findByRole('tab', { name: 'All Classes' })

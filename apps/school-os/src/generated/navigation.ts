@@ -391,7 +391,29 @@ export const navigationItems = [
             "label": "Add Timetable",
             "icon": "vx:plus"
           }
-        }
+        },
+        "children": [
+          {
+            "key": "day",
+            "title": "Day",
+            "href": "/academic/timetable/day"
+          },
+          {
+            "key": "week",
+            "title": "Week",
+            "href": "/academic/timetable/week"
+          },
+          {
+            "key": "month",
+            "title": "Month",
+            "href": "/academic/timetable/month"
+          },
+          {
+            "key": "year",
+            "title": "Year",
+            "href": "/academic/timetable/year"
+          }
+        ]
       },
       {
         "key": "homework",

@@ -1,11 +1,10 @@
 import { AltArrowLeft, AltArrowRight } from '@vezham/icons-react'
 import { Agenda } from '@vezham/react-pro-v3'
-import { Button, Surface, Tabs } from '@vezham/react-v3'
+import { Button, Surface } from '@vezham/react-v3'
 
 import type {
   TimetableAgendaEvent,
-  TimetableCalendarProps,
-  TimetableView
+  TimetableCalendarProps
 } from '@pages/academic/timetable/types'
 import { classNames } from '@pages/academic/timetable/variants'
 
@@ -23,7 +22,6 @@ export const TimetableCalendar = ({
   onNext,
   onPrevious,
   onToday,
-  onViewChange,
   view
 }: TimetableCalendarProps) => {
   return (
@@ -32,8 +30,6 @@ export const TimetableCalendar = ({
         onNext={onNext}
         onPrevious={onPrevious}
         onToday={onToday}
-        onViewChange={onViewChange}
-        view={view}
         heading={view === 'year' ? String(calendarDate.year) : agenda.heading}
       />
       {view === 'year' ? (
@@ -130,48 +126,16 @@ export const TimetableCalendar = ({
   )
 }
 
-const calendarViews: readonly { key: TimetableView; label: string }[] = [
-  { key: 'day', label: 'Day' },
-  { key: 'week', label: 'Week' },
-  { key: 'month', label: 'Month' },
-  { key: 'year', label: 'Year' }
-]
-
 type Props = {
   heading: string
   onNext: () => void
   onPrevious: () => void
   onToday: () => void
-  onViewChange: (view: TimetableView) => void
-  view: TimetableView
 }
 
-const CalendarHeader = ({
-  heading,
-  onNext,
-  onPrevious,
-  onToday,
-  onViewChange,
-  view
-}: Props) => (
+const CalendarHeader = ({ heading, onNext, onPrevious, onToday }: Props) => (
   <div className={classNames.calendarHeader}>
     <h2 className={classNames.calendarHeading}>{heading}</h2>
-    <Tabs
-      aria-label="Calendar view"
-      className={classNames.calendarViewSelector}
-      selectedKey={view}
-      onSelectionChange={key => onViewChange(String(key) as TimetableView)}>
-      <Tabs.ListContainer>
-        <Tabs.List aria-label="Calendar view">
-          {calendarViews.map(calendarView => (
-            <Tabs.Tab key={calendarView.key} id={calendarView.key}>
-              {calendarView.label}
-              <Tabs.Indicator />
-            </Tabs.Tab>
-          ))}
-        </Tabs.List>
-      </Tabs.ListContainer>
-    </Tabs>
     <div className={classNames.calendarNavigation}>
       <Button
         isIconOnly

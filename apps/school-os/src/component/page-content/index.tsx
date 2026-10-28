@@ -27,7 +27,11 @@ export const PageContent = () => {
   if (pathname === '/academic/section') return <SectionPage />
   if (pathname === '/academic/subject') return <SubjectPage />
   if (pathname === '/academic/syllabus') return <SyllabusPage />
-  if (pathname === '/academic/timetable') return <TimetablePage />
+  if (
+    pathname === '/academic/timetable' ||
+    pathname.startsWith('/academic/timetable/')
+  )
+    return <TimetablePage />
   if (pathname === '/academic/homework') return <HomeworkPage />
   if (pathname === '/academic/reasons') return <ReasonsPage />
   if (pathname === '/academic/examinations/exam') return <ExamPage />

@@ -51,7 +51,6 @@ export type TimetableCalendarProps = {
   onNext: () => void
   onPrevious: () => void
   onToday: () => void
-  onViewChange: (view: TimetableView) => void
   view: TimetableView
 }
 

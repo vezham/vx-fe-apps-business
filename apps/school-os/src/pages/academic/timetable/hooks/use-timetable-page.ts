@@ -1,5 +1,6 @@
 import { CalendarDateTime } from '@internationalized/date'
-import { useCallback, useMemo, useState } from 'react'
+import { useLocation, useNavigate } from '@tanstack/react-router'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { useAgenda } from '@vezham/react-pro-v3'
 import type { SortDescriptor } from '@vezham/react-v3'
@@ -35,7 +36,25 @@ import {
   useTimetable
 } from '@store/useAcademic/useTimetable'
 
+const timetableViews: readonly TimetableView[] = [
+  'day',
+  'week',
+  'month',
+  'year'
+]
+
+type TimetableFilterKey = Exclude<keyof TimetableFilter, 'view'>
+
+const getTimetableView = (pathname: string): TimetableView => {
+  const routeView = pathname.split('/').pop()
+  return timetableViews.includes(routeView as TimetableView)
+    ? (routeView as TimetableView)
+    : 'week'
+}
+
 export const useTimetablePage = () => {
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
   const { data: timetableEvents } = useTimetable.list({})
   const [events, setEvents] = useState<TimetableEvent[]>(timetableEvents)
   const [searchQuery] = useState('')
@@ -43,7 +62,9 @@ export const useTimetablePage = () => {
     column: 'start',
     direction: 'ascending'
   })
-  const [view, setView] = useState<TimetableView>('week')
+  const [view, setView] = useState<TimetableView>(() =>
+    getTimetableView(pathname)
+  )
   const [calendarDate, setCalendarDate] = useState(getTodayCalendarDate)
   const [filters, setFilters] = useState<TimetableFilter>(emptyFilters)
   const [draftFilters, setDraftFilters] =
@@ -52,6 +73,13 @@ export const useTimetablePage = () => {
   const [form, setForm] = useState<TimetableFormState>(emptyTimetableForm)
   const [formErrors, setFormErrors] = useState<TimetableFormErrors>({})
   const drawer = useDisclosure()
+  const routeView = getTimetableView(pathname)
+
+  useEffect(() => {
+    setView(routeView)
+    setFilters(current => ({ ...current, view: routeView }))
+    setDraftFilters(current => ({ ...current, view: routeView }))
+  }, [routeView])
 
   const filteredEvents = useMemo(() => {
     const query = searchQuery.trim().toLowerCase()
@@ -128,11 +156,20 @@ export const useTimetablePage = () => {
     sortOptions.find(option => option.column === sortDescriptor.column)
       ?.label ?? 'Start Time'
 
-  const updateView = useCallback((nextView: TimetableView) => {
-    setView(nextView)
-    setFilters(current => ({ ...current, view: nextView }))
-    setDraftFilters(current => ({ ...current, view: nextView }))
-  }, [])
+  const updateView = useCallback(
+    (nextView: TimetableView) => {
+      setView(nextView)
+      setFilters(current => ({ ...current, view: nextView }))
+      setDraftFilters(current => ({ ...current, view: nextView }))
+      void navigate({
+        to: '/academic/$',
+        params: { _splat: `timetable/${nextView}` },
+        search: { code: undefined, name: undefined, status: undefined },
+        replace: true
+      })
+    },
+    [navigate]
+  )
 
   const handleEventMove = useCallback(
     (id: string, start: CalendarDateTime, end: CalendarDateTime) => {
@@ -202,16 +239,32 @@ export const useTimetablePage = () => {
     setFilters(draftFilters)
 
     if (draftFilters.view) {
-      setView(draftFilters.view)
+      updateView(draftFilters.view)
     }
-  }, [draftFilters])
+  }, [draftFilters, updateView])
+
+  const removeFilter = useCallback(
+    (filter: TimetableFilterKey) => {
+      const nextFilters = { ...filters, [filter]: null }
+
+      setFilters(nextFilters)
+      setDraftFilters(nextFilters)
+    },
+    [filters]
+  )
 
   const resetFilters = useCallback(() => {
     setFilters(emptyFilters)
     setDraftFilters(emptyFilters)
     setView('week')
     setCalendarDate(todayDate)
-  }, [todayDate])
+    void navigate({
+      to: '/academic/$',
+      params: { _splat: 'timetable/week' },
+      search: { code: undefined, name: undefined, status: undefined },
+      replace: true
+    })
+  }, [navigate, todayDate])
 
   const updateSortDescriptor = useCallback((descriptor: SortDescriptor) => {
     setSortDescriptor(descriptor)
@@ -322,7 +375,6 @@ export const useTimetablePage = () => {
       onNext: goToNext,
       onPrevious: goToPrevious,
       onToday: goToToday,
-      onViewChange: updateView,
       view
     },
     drawerProps: {
@@ -334,6 +386,8 @@ export const useTimetablePage = () => {
       onFormChange: updateForm,
       onSave: saveTimetableEntry
     },
+    filters,
+    removeFilter,
     toolbar
   }
 }

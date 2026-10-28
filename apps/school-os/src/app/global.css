@@ -23,6 +23,17 @@
   padding-block: 0.25rem;
 }
 
+/* Keep month weekdays visually integrated with the calendar grid. */
+[data-timetable-agenda] .agenda__month-weekday-header {
+  background-color: transparent;
+  border-bottom: 0;
+}
+
+[data-timetable-agenda] .agenda__month-weekday {
+  justify-content: flex-end;
+  padding-inline: 1rem;
+}
+
 .academic-classes-grid {
   max-height: none;
   min-height: 0;

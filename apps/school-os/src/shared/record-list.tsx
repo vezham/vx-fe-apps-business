@@ -318,10 +318,21 @@ const EntityToolbarControls = <Key extends string>({
   onSortChange,
   onVisibleColumnsChange
 }: EntityToolbarProps<Key>) => {
+  const [isFilterOpen, setIsFilterOpen] = useState(false)
   const hasFilters = Object.values(draftFilters).some(Boolean)
   const selectedSort = columns.find(
     column => column.id === String(sortDescriptor.column)
   )
+
+  const handleApplyFilters = () => {
+    onApplyFilters()
+    setIsFilterOpen(false)
+  }
+
+  const handleResetFilters = () => {
+    onResetFilters()
+    setIsFilterOpen(false)
+  }
 
   return (
     <div
@@ -329,7 +340,7 @@ const EntityToolbarControls = <Key extends string>({
       aria-label="Table controls"
       className="flex items-center gap-1">
       <Separator orientation="vertical" className="h-8" />
-      <Dropdown>
+      <Dropdown isOpen={isFilterOpen} onOpenChange={setIsFilterOpen}>
         <Tooltip delay={0}>
           <Button
             isIconOnly
@@ -347,9 +358,9 @@ const EntityToolbarControls = <Key extends string>({
             <EntityFilterFields
               draftFilters={draftFilters}
               filters={filters}
-              onApplyFilters={onApplyFilters}
+              onApplyFilters={handleApplyFilters}
               onDraftFiltersChange={onDraftFiltersChange}
-              onResetFilters={onResetFilters}
+              onResetFilters={handleResetFilters}
             />
           </Surface>
         </Dropdown.Popover>
@@ -519,7 +530,10 @@ export const EntityMobileToolbar = <Key extends string>({
             closeSheet()
           }}
           onDraftFiltersChange={onDraftFiltersChange}
-          onResetFilters={onResetFilters}
+          onResetFilters={() => {
+            onResetFilters()
+            closeSheet()
+          }}
         />
       </div>
     )

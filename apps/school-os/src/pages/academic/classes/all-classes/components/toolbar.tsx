@@ -428,10 +428,16 @@ const ClassesToolbarControls = ({
       hasFilters={hasFilters}
       isHeaderAction={isHeaderAction}
       isOpen={isFilterOpen}
-      onApply={onApplyFilters}
+      onApply={() => {
+        onApplyFilters()
+        onFilterOpenChange(false)
+      }}
       onDraftFiltersChange={onDraftFiltersChange}
       onOpenChange={onFilterOpenChange}
-      onReset={onResetFilters}
+      onReset={() => {
+        onResetFilters()
+        onFilterOpenChange(false)
+      }}
     />
     <ColumnsDropdown
       isHeaderAction={isHeaderAction}
@@ -495,7 +501,10 @@ export const ClassesMobileToolbar = ({
             closeSheet()
           }}
           onDraftFiltersChange={onDraftFiltersChange}
-          onReset={onResetFilters}
+          onReset={() => {
+            onResetFilters()
+            closeSheet()
+          }}
         />
       </div>
     )

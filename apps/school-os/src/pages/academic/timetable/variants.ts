@@ -1,5 +1,5 @@
 export const classNames = {
-  page: 'space-y-4',
+  page: 'flex h-full min-h-0 flex-col gap-3 overflow-hidden',
   toolbar: 'flex flex-col gap-4 p-4',
   headerRow:
     'flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between',
@@ -36,21 +36,18 @@ export const classNames = {
   fieldLabel: 'font-bold text-[#111827]',
   fieldError: 'text-danger text-sm',
   statusRow: 'flex items-center justify-between gap-6',
-  calendarShell:
-    'overflow-hidden rounded-lg border border-[#e8edf6] bg-white shadow-sm',
+  calendarShell: 'flex min-h-0 w-full flex-1 flex-col overflow-hidden bg-white',
   calendarHeader:
-    'grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 border-b border-[#e8edf6] bg-white px-4 py-4 max-md:grid-cols-1 max-md:justify-items-center',
+    'flex items-center justify-between gap-3 bg-white px-3 py-2.5 max-md:flex-col max-md:items-center',
   calendarHeading:
     'min-w-0 truncate text-left text-xl font-semibold text-[#111827] max-md:justify-self-center max-md:text-center',
-  calendarViewSelector: 'justify-self-center max-md:w-full max-md:max-w-md',
-  calendarNavigation:
-    'flex items-center justify-center gap-1 max-md:justify-self-center',
+  calendarNavigation: 'flex items-center justify-center gap-1',
   calendarNavButton: 'size-9 rounded-full p-0',
   calendarTodayButton: 'min-w-20 rounded-full',
   agendaWrapper:
-    'w-full overflow-hidden [--agenda-current-time-color:var(--color-danger)] [--agenda-event-radius:8px] [--agenda-slot-height:64px] max-md:[--agenda-time-column-width:52px]',
+    'min-h-0 w-full flex-1 overflow-hidden [--agenda-current-time-color:var(--color-danger)] [--agenda-event-radius:8px] [--agenda-slot-height:64px] max-md:[--agenda-time-column-width:52px]',
   agenda:
-    'flex h-[calc(100dvh-17rem)] min-h-[620px] flex-col overflow-hidden [--agenda-current-time-color:var(--color-danger)] [--agenda-event-radius:8px] [--agenda-slot-height:64px] max-md:h-[calc(100dvh-14rem)] max-md:min-h-[560px] max-md:[--agenda-time-column-width:52px]',
+    'flex h-full min-h-0 flex-col overflow-hidden [--agenda-current-time-color:var(--color-danger)] [--agenda-event-radius:8px] [--agenda-slot-height:64px] max-md:[--agenda-time-column-width:52px]',
   agendaHeader:
     'z-20 flex flex-wrap items-center justify-between gap-3 border-b border-[#e8edf6] bg-white px-4 py-3 max-md:flex-col max-md:items-stretch',
   agendaHeading: 'text-lg font-semibold text-[#111827]',

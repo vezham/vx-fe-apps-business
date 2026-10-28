@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import {
   AltArrowDown as AltArrowDownIcon,
   Filter as FilterIcon
@@ -24,8 +26,10 @@ export const FilterDropdown = ({
   onApply,
   onReset
 }: FilterDropdownProps) => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <Dropdown>
+    <Dropdown isOpen={isOpen} onOpenChange={setIsOpen}>
       {isHeaderAction ? (
         <Button
           isIconOnly
@@ -92,10 +96,21 @@ export const FilterDropdown = ({
           />
 
           <div className={classNames.filterActions}>
-            <Button variant="secondary" onPress={onReset}>
+            <Button
+              variant="secondary"
+              onPress={() => {
+                onReset()
+                setIsOpen(false)
+              }}>
               Reset
             </Button>
-            <Button onPress={onApply}>Apply</Button>
+            <Button
+              onPress={() => {
+                onApply()
+                setIsOpen(false)
+              }}>
+              Apply
+            </Button>
           </div>
         </Surface>
       </Dropdown.Popover>
