@@ -5,7 +5,10 @@ import { useSectionToolbarContent } from '@vezham/react/layouts/section'
 
 import { TimetableCalendar } from './components/calendar/timetable-calendar'
 import { TimetableDrawer } from './components/drawer/timetable-drawer'
-import { TimetableHeaderToolbar } from './components/toolbar/timetable-toolbar'
+import {
+  TimetableHeaderToolbar,
+  TimetableMobileToolbar
+} from './components/toolbar/timetable-toolbar'
 import { useTimetablePage } from './hooks/use-timetable-page'
 import { classNames } from './variants'
 
@@ -32,7 +35,7 @@ const TimeTablePage = () => {
         />
       ),
       mobile: (
-        <TimetableHeaderToolbar
+        <TimetableMobileToolbar
           draftFilters={page.toolbar.draftFilters}
           onApply={page.toolbar.onApplyFilters}
           onReset={page.toolbar.onResetFilters}

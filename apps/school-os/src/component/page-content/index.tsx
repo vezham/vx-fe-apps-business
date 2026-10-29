@@ -1,4 +1,5 @@
 import { useLocation } from '@tanstack/react-router'
+import type { ComponentType } from 'react'
 
 import ClassRoutinePage from '@pages/academic/class-routine'
 import AcademicClassesPage from '@pages/academic/classes/all-classes'
@@ -16,32 +17,34 @@ import SubjectPage from '@pages/academic/subject'
 import SyllabusPage from '@pages/academic/syllabus'
 import TimetablePage from '@pages/academic/timetable'
 
+const pagesByPath: Record<string, ComponentType> = {
+  '/academic/classes/allclasses': AcademicClassesPage,
+  '/academic/classes/schedule': ClassSchedulePage,
+  '/academic/classroom': ClassroomPage,
+  '/academic/class-routine': ClassRoutinePage,
+  '/academic/section': SectionPage,
+  '/academic/subject': SubjectPage,
+  '/academic/syllabus': SyllabusPage,
+  '/academic/homework': HomeworkPage,
+  '/academic/reasons': ReasonsPage,
+  '/academic/examinations/exam': ExamPage,
+  '/academic/examinations/exam-schedule': ExamSchedulePage,
+  '/academic/examinations/grades': GradesPage,
+  '/academic/examinations/exam-attendance': ExamAttendancePage,
+  '/academic/examinations/exam-results': ExamResultsPage
+}
+
 export const PageContent = () => {
   const { href, pathname } = useLocation()
-
-  if (pathname === '/academic/classes/allclasses')
-    return <AcademicClassesPage />
-  if (pathname === '/academic/classes/schedule') return <ClassSchedulePage />
-  if (pathname === '/academic/classroom') return <ClassroomPage />
-  if (pathname === '/academic/class-routine') return <ClassRoutinePage />
-  if (pathname === '/academic/section') return <SectionPage />
-  if (pathname === '/academic/subject') return <SubjectPage />
-  if (pathname === '/academic/syllabus') return <SyllabusPage />
-  if (
+  const Page =
     pathname === '/academic/timetable' ||
     pathname.startsWith('/academic/timetable/')
-  )
-    return <TimetablePage />
-  if (pathname === '/academic/homework') return <HomeworkPage />
-  if (pathname === '/academic/reasons') return <ReasonsPage />
-  if (pathname === '/academic/examinations/exam') return <ExamPage />
-  if (pathname === '/academic/examinations/exam-schedule')
-    return <ExamSchedulePage />
-  if (pathname === '/academic/examinations/grades') return <GradesPage />
-  if (pathname === '/academic/examinations/exam-attendance')
-    return <ExamAttendancePage />
-  if (pathname === '/academic/examinations/exam-results')
-    return <ExamResultsPage />
+      ? TimetablePage
+      : pagesByPath[pathname]
 
-  return <p className="text-muted font-mono text-sm break-all">{href}</p>
+  return Page ? (
+    <Page />
+  ) : (
+    <p className="text-muted font-mono text-sm break-all">{href}</p>
+  )
 }

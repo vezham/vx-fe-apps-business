@@ -3,6 +3,7 @@ import {
   DetailTabs,
   getDetailTabId
 } from '@component/detail-tabs'
+import { StatusSwitchContent } from '@component/status-switch-content'
 import type { ReactNode } from 'react'
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react'
 
@@ -158,17 +159,7 @@ const EntityEditor = <Row extends EntityRecord, Key extends string>({
                         status: isSelected ? 'Active' : 'Inactive'
                       })
                     }>
-                    <Switch.Content className="flex w-full items-center justify-between gap-4">
-                      <span className="flex flex-col gap-1">
-                        <span className="font-medium">Status</span>
-                        <span className="text-muted text-sm">
-                          Change the status by toggle
-                        </span>
-                      </span>
-                      <Switch.Control>
-                        <Switch.Thumb />
-                      </Switch.Control>
-                    </Switch.Content>
+                    <StatusSwitchContent />
                   </Switch>
                 </Sheet.Body>
                 <Sheet.Footer className="justify-end gap-2">
@@ -523,6 +514,7 @@ export const AcademicEntityPage = <
       applyFilters,
       config.columns,
       config.filters,
+      config.pageKey,
       handleSortChange,
       page.draftFilters,
       page.setDraftFilters,

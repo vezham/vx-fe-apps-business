@@ -1,3 +1,4 @@
+import { StatusSwitchContent } from '@component/status-switch-content'
 import type { ChangeEvent } from 'react'
 import { useState } from 'react'
 
@@ -144,17 +145,7 @@ const ClassFormContent = ({
               status: isSelected ? 'Active' : 'Inactive'
             }))
           }>
-          <Switch.Content className="flex w-full items-center justify-between gap-4">
-            <span className="flex flex-col gap-1">
-              <span className="font-medium">Status</span>
-              <span className="text-muted text-sm">
-                Change the status by toggle
-              </span>
-            </span>
-            <Switch.Control>
-              <Switch.Thumb />
-            </Switch.Control>
-          </Switch.Content>
+          <StatusSwitchContent />
         </Switch>
       </Sheet.Body>
       <Sheet.Footer

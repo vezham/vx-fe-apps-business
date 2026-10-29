@@ -5,6 +5,7 @@ import { getTodayCalendarDate } from '@pages/academic/timetable/utils/date'
 import { classNames } from '@pages/academic/timetable/variants'
 
 const weekdays = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long' })
 
 type Props = {
   date: CalendarDate
@@ -32,9 +33,9 @@ const YearMonth = ({ date, events, month }: Props & { month: number }) => {
       ? null
       : new CalendarDate(date.year, month, index - leadingDays + 1)
   )
-  const monthLabel = new Intl.DateTimeFormat('en-US', {
-    month: 'long'
-  }).format(new Date(Date.UTC(date.year, month - 1, 1)))
+  const monthLabel = monthFormatter.format(
+    new Date(Date.UTC(date.year, month - 1, 1))
+  )
   const today = getTodayCalendarDate()
 
   return (
