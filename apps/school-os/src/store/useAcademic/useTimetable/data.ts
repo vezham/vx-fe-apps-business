@@ -200,8 +200,7 @@ export const emptyFilters: TimetableFilter = {
   day: null,
   section: null,
   subject: null,
-  teacher: null,
-  view: null
+  teacher: null
 }
 
 export const timetableEvents: TimetableEvent[] = [

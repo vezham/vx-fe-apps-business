@@ -23,10 +23,19 @@
   padding-block: 0.25rem;
 }
 
-/* Keep month weekdays visually integrated with the calendar grid. */
+/* Keep sticky month weekdays legible above the scrolling calendar grid. */
 [data-timetable-agenda] .agenda__month-weekday-header {
-  background-color: transparent;
-  border-bottom: 0;
+  z-index: 30;
+  border-bottom-color: transparent;
+  background-color: var(--background);
+  background-color: color-mix(in srgb, var(--background) 94%, transparent);
+  backdrop-filter: blur(0.75rem);
+  transition: border-color 150ms ease;
+}
+
+[data-timetable-agenda][data-month-header-scrolled]
+  .agenda__month-weekday-header {
+  border-bottom-color: var(--separator);
 }
 
 [data-timetable-agenda] .agenda__month-weekday {

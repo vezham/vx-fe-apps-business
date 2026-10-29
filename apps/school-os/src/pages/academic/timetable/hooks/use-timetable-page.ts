@@ -1,6 +1,6 @@
 import { CalendarDateTime } from '@internationalized/date'
 import { useLocation, useNavigate } from '@tanstack/react-router'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { useAgenda } from '@vezham/react-pro-v3'
 import type { SortDescriptor } from '@vezham/react-v3'
@@ -43,8 +43,6 @@ const timetableViews: readonly TimetableView[] = [
   'year'
 ]
 
-type TimetableFilterKey = Exclude<keyof TimetableFilter, 'view'>
-
 const getTimetableView = (pathname: string): TimetableView => {
   const routeView = pathname.split('/').pop()
   return timetableViews.includes(routeView as TimetableView)
@@ -62,9 +60,6 @@ export const useTimetablePage = () => {
     column: 'start',
     direction: 'ascending'
   })
-  const [view, setView] = useState<TimetableView>(() =>
-    getTimetableView(pathname)
-  )
   const [calendarDate, setCalendarDate] = useState(getTodayCalendarDate)
   const [filters, setFilters] = useState<TimetableFilter>(emptyFilters)
   const [draftFilters, setDraftFilters] =
@@ -73,13 +68,7 @@ export const useTimetablePage = () => {
   const [form, setForm] = useState<TimetableFormState>(emptyTimetableForm)
   const [formErrors, setFormErrors] = useState<TimetableFormErrors>({})
   const drawer = useDisclosure()
-  const routeView = getTimetableView(pathname)
-
-  useEffect(() => {
-    setView(routeView)
-    setFilters(current => ({ ...current, view: routeView }))
-    setDraftFilters(current => ({ ...current, view: routeView }))
-  }, [routeView])
+  const view = getTimetableView(pathname)
 
   const filteredEvents = useMemo(() => {
     const query = searchQuery.trim().toLowerCase()
@@ -158,9 +147,6 @@ export const useTimetablePage = () => {
 
   const updateView = useCallback(
     (nextView: TimetableView) => {
-      setView(nextView)
-      setFilters(current => ({ ...current, view: nextView }))
-      setDraftFilters(current => ({ ...current, view: nextView }))
       void navigate({
         to: '/academic/$',
         params: { _splat: `timetable/${nextView}` },
@@ -237,14 +223,10 @@ export const useTimetablePage = () => {
 
   const applyFilters = useCallback(() => {
     setFilters(draftFilters)
-
-    if (draftFilters.view) {
-      updateView(draftFilters.view)
-    }
-  }, [draftFilters, updateView])
+  }, [draftFilters])
 
   const removeFilter = useCallback(
-    (filter: TimetableFilterKey) => {
+    (filter: keyof TimetableFilter) => {
       const nextFilters = { ...filters, [filter]: null }
 
       setFilters(nextFilters)
@@ -256,7 +238,6 @@ export const useTimetablePage = () => {
   const resetFilters = useCallback(() => {
     setFilters(emptyFilters)
     setDraftFilters(emptyFilters)
-    setView('week')
     setCalendarDate(todayDate)
     void navigate({
       to: '/academic/$',

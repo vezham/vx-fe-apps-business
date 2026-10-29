@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 import { AltArrowLeft, AltArrowRight } from '@vezham/icons-react'
 import { Agenda } from '@vezham/react-pro-v3'
 import { Button, Surface } from '@vezham/react-v3'
@@ -24,6 +26,30 @@ export const TimetableCalendar = ({
   onToday,
   view
 }: TimetableCalendarProps) => {
+  const agendaBodyRef = useRef<HTMLDivElement>(null)
+  const [isMonthHeaderScrolled, setIsMonthHeaderScrolled] = useState(false)
+
+  useEffect(() => {
+    const agendaBody = agendaBodyRef.current
+
+    if (view !== 'month' || !agendaBody) {
+      setIsMonthHeaderScrolled(false)
+      return
+    }
+
+    const updateMonthHeaderState = () => {
+      setIsMonthHeaderScrolled(agendaBody.scrollTop > 0)
+    }
+
+    updateMonthHeaderState()
+    agendaBody.addEventListener('scroll', updateMonthHeaderState, {
+      passive: true
+    })
+
+    return () =>
+      agendaBody.removeEventListener('scroll', updateMonthHeaderState)
+  }, [agendaEvents.length, view])
+
   return (
     <Surface className={classNames.calendarShell}>
       <CalendarHeader
@@ -39,9 +65,14 @@ export const TimetableCalendar = ({
           No timetable events available
         </div>
       ) : (
-        <div className={classNames.agendaWrapper} data-timetable-agenda>
+        <div
+          className={classNames.agendaWrapper}
+          data-month-header-scrolled={
+            view === 'month' && isMonthHeaderScrolled ? true : undefined
+          }
+          data-timetable-agenda>
           <Agenda {...agenda} className={classNames.agenda}>
-            <Agenda.Body>
+            <Agenda.Body ref={agendaBodyRef}>
               {agenda.view !== 'month' ? (
                 <>
                   <Agenda.WeekHeader />

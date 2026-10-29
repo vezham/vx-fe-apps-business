@@ -67,7 +67,6 @@ export type TimetableFilter = {
   teacher: string | null
   subject: string | null
   day: string | null
-  view: TimetableView | null
 }
 
 export type SortOption = {
