@@ -1,23 +1,54 @@
-import { useLocation } from '@tanstack/react-router'
-import type { ComponentType } from 'react'
+import {
+  type AsyncRouteComponent,
+  lazyRouteComponent,
+  useLocation
+} from '@tanstack/react-router'
 
-import ClassRoutinePage from '@pages/academic/class-routine'
-import AcademicClassesPage from '@pages/academic/classes/all-classes'
-import ClassSchedulePage from '@pages/academic/classes/schedule'
-import ClassroomPage from '@pages/academic/classroom'
-import ExamPage from '@pages/academic/examinations/exam'
-import ExamAttendancePage from '@pages/academic/examinations/exam-attendance'
-import ExamResultsPage from '@pages/academic/examinations/exam-results'
-import ExamSchedulePage from '@pages/academic/examinations/exam-schedule'
-import GradesPage from '@pages/academic/examinations/grades'
-import HomeworkPage from '@pages/academic/homework'
-import ReasonsPage from '@pages/academic/reasons'
-import SectionPage from '@pages/academic/section'
-import SubjectPage from '@pages/academic/subject'
-import SyllabusPage from '@pages/academic/syllabus'
-import TimetablePage from '@pages/academic/timetable'
+const ClassRoutinePage = lazyRouteComponent(
+  () => import('@pages/academic/class-routine')
+)
+const AcademicClassesPage = lazyRouteComponent(
+  () => import('@pages/academic/classes/all-classes')
+)
+const ClassSchedulePage = lazyRouteComponent(
+  () => import('@pages/academic/classes/schedule')
+)
+const ClassroomPage = lazyRouteComponent(
+  () => import('@pages/academic/classroom')
+)
+const ExamPage = lazyRouteComponent(
+  () => import('@pages/academic/examinations/exam')
+)
+const ExamAttendancePage = lazyRouteComponent(
+  () => import('@pages/academic/examinations/exam-attendance')
+)
+const ExamResultsPage = lazyRouteComponent(
+  () => import('@pages/academic/examinations/exam-results')
+)
+const ExamSchedulePage = lazyRouteComponent(
+  () => import('@pages/academic/examinations/exam-schedule')
+)
+const GradesPage = lazyRouteComponent(
+  () => import('@pages/academic/examinations/grades')
+)
+const HomeworkPage = lazyRouteComponent(
+  () => import('@pages/academic/homework')
+)
+const ReasonsPage = lazyRouteComponent(() => import('@pages/academic/reasons'))
+const SectionPage = lazyRouteComponent(() => import('@pages/academic/section'))
+const SubjectPage = lazyRouteComponent(() => import('@pages/academic/subject'))
+const SyllabusPage = lazyRouteComponent(
+  () => import('@pages/academic/syllabus')
+)
+const TimetablePage = lazyRouteComponent(
+  () => import('@pages/academic/timetable')
+)
 
-const pagesByPath: Record<string, ComponentType> = {
+const pagesByPath: Record<
+  string,
+  AsyncRouteComponent<Record<string, never>>
+> = {
+  '/academic/timetable': TimetablePage,
   '/academic/classes/allclasses': AcademicClassesPage,
   '/academic/classes/schedule': ClassSchedulePage,
   '/academic/classroom': ClassroomPage,
@@ -34,13 +65,18 @@ const pagesByPath: Record<string, ComponentType> = {
   '/academic/examinations/exam-results': ExamResultsPage
 }
 
+const getPagePath = (pathname: string) =>
+  pathname === '/academic/timetable' ||
+  pathname.startsWith('/academic/timetable/')
+    ? '/academic/timetable'
+    : pathname
+
+export const preloadPage = (pathname: string) =>
+  pagesByPath[getPagePath(pathname)]?.preload?.()
+
 export const PageContent = () => {
   const { href, pathname } = useLocation()
-  const Page =
-    pathname === '/academic/timetable' ||
-    pathname.startsWith('/academic/timetable/')
-      ? TimetablePage
-      : pagesByPath[pathname]
+  const Page = pagesByPath[getPagePath(pathname)]
 
   return Page ? (
     <Page />

@@ -1,4 +1,4 @@
-import { PageContent } from '@component/page-content'
+import { PageContent, preloadPage } from '@component/page-content'
 import {
   getDefaultDestination,
   getNavigationPage
@@ -25,5 +25,6 @@ export const Route = createFileRoute('/academic/$')({
     if (page.children?.length)
       throw redirect({ to: getDefaultDestination(page), replace: true })
   },
+  loader: ({ location }) => preloadPage(location.pathname),
   component: PageContent
 })

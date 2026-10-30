@@ -168,26 +168,26 @@ catalogs:
       specifier: 3.12.4
       version: 3.12.4
     '@vezham/config':
-      specifier: 26.0.0
-      version: 26.0.0
+      specifier: 26.0.1
+      version: 26.0.1
     '@vezham/devtools':
-      specifier: 26.0.0
-      version: 26.0.0
+      specifier: 26.0.1
+      version: 26.0.1
     '@vezham/env':
-      specifier: 26.0.0
-      version: 26.0.0
+      specifier: 26.0.1
+      version: 26.0.1
     '@vezham/react':
-      specifier: 26.0.0
-      version: 26.0.0
+      specifier: 26.0.1
+      version: 26.0.1
     '@vezham/start':
-      specifier: 26.0.0
-      version: 26.0.0
+      specifier: 26.0.1
+      version: 26.0.1
     '@vezham/template':
-      specifier: 26.0.0
-      version: 26.0.0
+      specifier: 26.0.1
+      version: 26.0.1
     '@vezham/utils':
-      specifier: 26.0.0
-      version: 26.0.0
+      specifier: 26.0.1
+      version: 26.0.1
     framer-motion:
       specifier: ^12.40.0
       version: 12.43.0
@@ -274,7 +274,7 @@ importers:
         version: 0.8.6
       '@vezham/devtools':
         specifier: 'catalog:'
-        version: 26.0.0(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)
+        version: 26.0.1(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)
       '@vezham/docs-core':
         specifier: npm:@vx-oss/docs-core@1.0.17
         version: '@vx-oss/docs-core@1.0.17(@mdx-js/mdx@3.1.1(supports-color@10.2.2))(@tanstack/react-router@1.170.41(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.2.17)(lucide-react@1.61.0(@types/react@19.2.17)(react@19.2.7))(next@16.4.2(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.10.0)(@playwright/test@1.64.1)(@types/node@25.9.3)(babel-plugin-macros@3.1.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(supports-color@10.2.2)(zod@4.6.7)'
@@ -292,10 +292,10 @@ importers:
         version: '@vx-oss/docs-story@1.0.17(4eca0da51de2a795d9ada64a87b027d5)'
       '@vezham/env':
         specifier: 'catalog:'
-        version: 26.0.0
+        version: 26.0.1
       '@vezham/react':
         specifier: 'catalog:'
-        version: 26.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 26.0.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@vezham/react-pro-v3':
         specifier: npm:@heroui-pro/react@1.0.0-beta.10
         version: '@heroui-pro/react@1.0.0-beta.10'
@@ -304,16 +304,16 @@ importers:
         version: '@heroui/react@3.2.6(@internationalized/date@3.12.4)(@react-aria/ssr@3.10.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@react-aria/utils@3.34.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@react-spectrum/provider@3.11.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-aria-components@1.21.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-aria@3.52.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(tailwind-merge@3.7.0)(tailwindcss@4.3.0)'
       '@vezham/start':
         specifier: 'catalog:'
-        version: 26.0.0(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)
+        version: 26.0.1(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)
       '@vezham/styles-v3':
         specifier: npm:@heroui/styles@3.2.6
         version: '@heroui/styles@3.2.6(tailwind-merge@3.7.0)(tailwindcss@4.3.0)'
       '@vezham/template':
         specifier: 'catalog:'
-        version: 26.0.0
+        version: 26.0.1
       '@vezham/utils':
         specifier: 'catalog:'
-        version: 26.0.0
+        version: 26.0.1
       embla-carousel:
         specifier: ^8.6.0
         version: 8.6.0
@@ -500,7 +500,7 @@ importers:
         version: 17.0.35
       '@vezham/config':
         specifier: 'catalog:'
-        version: 26.0.0
+        version: 26.0.1
       '@vezham/icons-react':
         specifier: 1.0.7
         version: 1.0.7(react@19.2.7)
@@ -654,6 +654,10 @@ importers:
       yargs:
         specifier: 17.7.3
         version: 17.7.3
+
+  apps/school-os: {}
+
+  apps/school-os-e2e: {}
 
   packages/vx/react: {}
 
@@ -6160,38 +6164,38 @@ packages:
     resolution: {integrity: sha512-LTV6/Kcr8pS//iDjDitfYi1bp0AlKBUuvNoHAbI8tMnj0PLOUtRWJxId5FwuE+z3oNBeDLeOWPoXVtqKjl277Q==}
     engines: {node: '>=18'}
 
-  '@vezham/config@26.0.0':
-    resolution: {integrity: sha512-Pr8VUa807b8R5LTRNfaqVZHzTw9OoRS+wAL4xxjefiV53mjXHWpyIJ6OE9we4g+m2w7LgON5z06mjkjFdwyZog==}
+  '@vezham/config@26.0.1':
+    resolution: {integrity: sha512-99RUCtDXlePLxXiANlhSetA+j9TWiHnzXiyhNC/CnwIhNI2WpnMMQ5lFLukueiclNrUoPbVmfbto8yVWJF6pag==}
     hasBin: true
 
-  '@vezham/devtools@26.0.0':
-    resolution: {integrity: sha512-eKle+FaF0mcWe1l9nZIzPhEzD1MvcIunPSwXfxGhDrN2TQcbwfF7YSq+vZ0EnPYoeMQhdr7zfzWMRIZQn5unbQ==}
+  '@vezham/devtools@26.0.1':
+    resolution: {integrity: sha512-o1QMyJpgL1QepWVW0srCLizStozzhGfVK6wc+hbJo9MeaRSjNd5RUiGRjnZIhceJLpLGYFdjrYpOOO5B4yHL4g==}
 
-  '@vezham/env@26.0.0':
-    resolution: {integrity: sha512-9AJrfVxOZvWfjXKz1ykZgZN4A/NpqbZ2vCkeb8MWDdxEcYNbujIxDm4YS9qd2eKK2RuPN2Mo1FfOihP0C4PaZw==}
+  '@vezham/env@26.0.1':
+    resolution: {integrity: sha512-cm300aXnlNd0qtPHcRB4uBihMYNxvwZFgsggsKI6yAJV02SyYe0RMoysw3RlOF/zetMqlztcJ6CcrlN0XaQ4Nw==}
 
-  '@vezham/hooks@26.0.0':
-    resolution: {integrity: sha512-v5vhvD1Nbt77oEsAIAkz0MtzTUtYPfp/fJX+QfYWLxRD965RF1v/2arLe5PjmUw538/syecqaKijxsYyzMZJUw==}
+  '@vezham/hooks@26.0.1':
+    resolution: {integrity: sha512-LDL5cXhCBTAI6jdtI3ESfwgNDtg0GI2SoaCLvTPPLy7FOfNGx1VQZiQjrfbj5Geigp+vsBARlIL+Y4drDADOUQ==}
 
   '@vezham/icons-react@1.0.7':
     resolution: {integrity: sha512-f9ckgxi4NIP/OBG3RCw4mCAK9rl8EKDdiocVqYYXQ/2IjsKytJ3DQkzHqcBa1RLprF93rIRvvCc+1YYT5QaknQ==}
     peerDependencies:
       react: '>=16.8.0'
 
-  '@vezham/react@26.0.0':
-    resolution: {integrity: sha512-97ySyvkh77iWZLIuBiRMU5pAiyA7Q1huKd4yRtfDJcs5AVRJ+wsksDCRQaqlBVYTq5mA+aagReD8h1r/r4gdkg==}
+  '@vezham/react@26.0.1':
+    resolution: {integrity: sha512-fZpU0BTBGj+sDwAWBltl8KzwPx+gZ892TAZvobKGHj6cmrNVqFCiEafnsIoEhZO3g/gI8A+Vi4D4NbOLMXMIOw==}
 
-  '@vezham/start@26.0.0':
-    resolution: {integrity: sha512-jqZE0Utf5rvX5EaPEXJbrHtO/YGVr5EQwg4fN3MkFZF8oDzE5dO61sZil1XzLS7DMrMBDwOA3kMstKAuTpnZgg==}
+  '@vezham/start@26.0.1':
+    resolution: {integrity: sha512-u7nERBTHo1cUkdItZyWddwDo09TFSJEx5338jnA8c7Qg8HIw7OwEL4Znge5B4sAlsfQ21IKNzWN8JSY0+F8AHg==}
 
-  '@vezham/template@26.0.0':
-    resolution: {integrity: sha512-xZ3PDCDRMjuyn6XWxlc2hsi1cuZp8YlTiiXZ78MetMnsIu4iDCLv7MDpRRPDyMdIE9dGz/fDipQeHQwsbfU1/g==}
+  '@vezham/template@26.0.1':
+    resolution: {integrity: sha512-8UiwI47OK5vVZkQTDn9gDkQHmEqiV+QzvPIyDxcoIzZG+Lt5t9O/lnU5Auzsdn2xS6A9fNuyKLgt7GcntnALOg==}
 
   '@vezham/use-logger@0.3.3':
     resolution: {integrity: sha512-b0f7GVXDxfUU1FPHb4XWEIT6NNU00TLueuQcAKq46JjiZfFw0NdHX3h/ZO20AR0iKsCkhRyjtqw6+QkGBj2lMg==}
 
-  '@vezham/utils@26.0.0':
-    resolution: {integrity: sha512-c0nlRaHTWFroHu5j41htZa8JA6WnKQp/mbL4jTL5GwFHDGFe5OCzIjr1TJ3tES2KeoH7LUasf+SFNr0x6vCUvQ==}
+  '@vezham/utils@26.0.1':
+    resolution: {integrity: sha512-VD3pF4m5ij3sNqN4fy9aq+yiNLc7V2AzPiw6q9HvUWIOrsbTXA+/QR9M6n2gPUXGzm0aaxaQeJJHYBkaeHgjKg==}
 
   '@vitejs/plugin-react-swc@4.3.3':
     resolution: {integrity: sha512-bti8ZAcvz4Lh6/e4Uk2k3aa1TiUXbbMsahuqOHvd3MveFTkKDZOA6wQVkpj7J/+tepX/wGfe+lsGh/t24HTXMQ==}
@@ -18987,11 +18991,11 @@ snapshots:
       lodash: 4.18.1
       minimatch: 7.4.9
 
-  '@vezham/config@26.0.0':
+  '@vezham/config@26.0.1':
     dependencies:
       yaml: 2.9.1
 
-  '@vezham/devtools@26.0.0(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)':
+  '@vezham/devtools@26.0.1(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)':
     dependencies:
       '@tanstack/react-hotkeys-devtools': 0.7.0(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)
     transitivePeerDependencies:
@@ -19005,28 +19009,28 @@ snapshots:
       - solid-js
       - vue
 
-  '@vezham/env@26.0.0': {}
+  '@vezham/env@26.0.1': {}
 
-  '@vezham/hooks@26.0.0': {}
+  '@vezham/hooks@26.0.1': {}
 
   '@vezham/icons-react@1.0.7(react@19.2.7)':
     dependencies:
       react: 19.2.7
 
-  '@vezham/react@26.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@vezham/react@26.0.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@tanstack/react-hotkeys': 0.10.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@vezham/hooks': 26.0.0
+      '@vezham/hooks': 26.0.1
       react-aria-components: 1.21.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
     transitivePeerDependencies:
       - react
       - react-dom
 
-  '@vezham/start@26.0.0(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)':
+  '@vezham/start@26.0.1(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)':
     dependencies:
-      '@vezham/devtools': 26.0.0(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)
-      '@vezham/env': 26.0.0
-      '@vezham/template': 26.0.0
+      '@vezham/devtools': 26.0.1(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)
+      '@vezham/env': 26.0.1
+      '@vezham/template': 26.0.1
       yaml: 2.9.1
     transitivePeerDependencies:
       - '@tanstack/hotkeys'
@@ -19039,11 +19043,11 @@ snapshots:
       - solid-js
       - vue
 
-  '@vezham/template@26.0.0': {}
+  '@vezham/template@26.0.1': {}
 
   '@vezham/use-logger@0.3.3': {}
 
-  '@vezham/utils@26.0.0': {}
+  '@vezham/utils@26.0.1': {}
 
   '@vitejs/plugin-react-swc@4.3.3(@swc/helpers@0.5.23)(vite@8.1.6(@types/node@25.9.3)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))':
     dependencies:
