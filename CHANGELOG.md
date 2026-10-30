@@ -1,3 +1,34 @@
+# 26.0.0 (2026-10-29)
+
+### 🏡 Chore
+
+- **repo:** upgrade Nx 24 and add migration prompts ([93924f35](https://github.com/vezham-labs/vx-fe-kit/commit/93924f35))
+- **workspace:** add Ox tooling ([1bca5634](https://github.com/vezham-labs/vx-fe-kit/commit/1bca5634))
+- **workspace:** align CLI release setup ([b0d9b485](https://github.com/vezham-labs/vx-fe-kit/commit/b0d9b485))
+
+### deps
+
+- **workspace:** bump CLI and Vezham packages ([bd2d1ace](https://github.com/vezham-labs/vx-fe-kit/commit/bd2d1ace))
+
+### ❤️ Thank You
+
+- vx-vigneshwaran
+
+## 26.0.0-beta.3 (2026-10-28)
+
+### 🏡 Chore
+
+- **repo:** update packages to beta ([3e30c9dc](https://github.com/vezham-labs/vx-fe-kit/commit/3e30c9dc))
+- **workspace:** reserve hooks catalog version ([c9c3d93c](https://github.com/vezham-labs/vx-fe-kit/commit/c9c3d93c))
+
+### deps
+
+- **workspace:** update Fallow to 3.37.0 ([9fd6dceb](https://github.com/vezham-labs/vx-fe-kit/commit/9fd6dceb))
+
+### ❤️ Thank You
+
+- vx-vigneshwaran
+
 ## 26.0.0-beta.2 (2026-10-25)
 
 ### 🚀 Features
