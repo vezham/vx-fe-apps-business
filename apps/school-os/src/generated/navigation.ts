@@ -1216,12 +1216,12 @@ export const controlCenter = {
       "span": "full"
     },
     {
-      "id": "demo-appearance-lite",
+      "id": "appearance-lite",
       "type": "appearance-toggle",
       "span": "compact"
     },
     {
-      "id": "demo-appearance",
+      "id": "appearance",
       "type": "appearance",
       "span": "wide"
     },

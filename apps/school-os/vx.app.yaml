@@ -4,7 +4,7 @@ core:
   id: vezham-school-os
   name: Vezham School OS
   shortName: School OS
-  version: 26.0.0-beta.2
+  version: 26.0.2
   description: Single app to manage your Vezham School OS
   publisher:
     name: Vezham Technologies Private Limited

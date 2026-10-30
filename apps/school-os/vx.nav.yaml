@@ -657,10 +657,10 @@ controlCenter:
     - id: mirroring
       type: preview-mirroring
       span: full
-    - id: demo-appearance-lite
+    - id: appearance-lite
       type: appearance-toggle
       span: compact
-    - id: demo-appearance
+    - id: appearance
       type: appearance
       span: wide
     - id: appearance-wide

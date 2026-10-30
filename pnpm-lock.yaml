@@ -655,31 +655,6 @@ importers:
         specifier: 17.7.3
         version: 17.7.3
 
-  apps/school-os:
-    dependencies:
-      '@internationalized/date':
-        specifier: 'catalog:'
-        version: 3.12.4
-      '@vezham/env':
-        specifier: 'catalog:'
-        version: 26.0.0
-      '@vezham/react':
-        specifier: 'catalog:'
-        version: 26.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@vezham/start':
-        specifier: 'catalog:'
-        version: 26.0.0(@tanstack/hotkeys@0.8.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(csstype@3.2.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(solid-js@1.9.17)
-      '@vezham/template':
-        specifier: 'catalog:'
-        version: 26.0.0
-      '@vezham/utils':
-        specifier: 'catalog:'
-        version: 26.0.0
-    devDependencies:
-      react-aria-components:
-        specifier: 'catalog:'
-        version: 1.21.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-
   packages/vx/react: {}
 
 packages:

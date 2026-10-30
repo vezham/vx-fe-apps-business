@@ -1,17 +1,6 @@
 {
   "name": "school-os",
-  "version": "26.0.0-beta.2",
+  "version": "26.0.2",
   "private": true,
-  "type": "module",
-  "dependencies": {
-    "@internationalized/date": "catalog:",
-    "@vezham/env": "catalog:",
-    "@vezham/react": "catalog:",
-    "@vezham/start": "catalog:",
-    "@vezham/template": "catalog:",
-    "@vezham/utils": "catalog:"
-  },
-  "devDependencies": {
-    "react-aria-components": "catalog:"
-  }
+  "type": "module"
 }
