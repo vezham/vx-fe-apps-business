@@ -18,11 +18,14 @@ import { Route as AcademicIndexRouteImport } from './routes/academic/index'
 import { Route as AcademicSplatRouteImport } from './routes/academic/$'
 import { Route as ApiHeartbeatRouteRouteImport } from './routes/api/heartbeat/route'
 import { Route as ApiPulseRouteRouteImport } from './routes/api/pulse/route'
+import { Route as OperationsIndexRouteImport } from './routes/operations/index'
+import { Route as OperationsSplatRouteImport } from './routes/operations/$'
 import { Route as TabsIndexRouteImport } from './routes/tabs/index'
 import { Route as WorkspaceIndexRouteImport } from './routes/workspace/index'
 
 const AcademicRouteLazyRouteImport = createFileRoute('/academic')()
 const CanvasLazyRouteImport = createFileRoute('/canvas')()
+const OperationsRouteLazyRouteImport = createFileRoute('/operations')()
 const ProLazyRouteImport = createFileRoute('/pro')()
 const TabsRouteLazyRouteImport = createFileRoute('/tabs')()
 const WorkspaceRouteLazyRouteImport = createFileRoute('/workspace')()
@@ -52,6 +55,13 @@ const CanvasLazyRoute = CanvasLazyRouteImport.update({
   path: '/canvas',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/canvas.lazy').then((d) => d.Route))
+const OperationsRouteLazyRoute = OperationsRouteLazyRouteImport.update({
+  id: '/operations',
+  path: '/operations',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./routes/operations/route.lazy').then((d) => d.Route),
+)
 const ProLazyRoute = ProLazyRouteImport.update({
   id: '/pro',
   path: '/pro',
@@ -101,6 +111,16 @@ const ChannelsIndexLazyRoute = ChannelsIndexLazyRouteImport.update({
 } as any).lazy(() =>
   import('./routes/channels/index.lazy').then((d) => d.Route),
 )
+const OperationsIndexRoute = OperationsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OperationsRouteLazyRoute,
+} as any)
+const OperationsSplatRoute = OperationsSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => OperationsRouteLazyRoute,
+} as any)
 const TabsIndexRoute = TabsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -127,6 +147,7 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/settings': typeof SettingsRoute
   '/academic': typeof AcademicRouteLazyRouteWithChildren
+  '/operations': typeof OperationsRouteLazyRouteWithChildren
   '/tabs': typeof TabsRouteLazyRouteWithChildren
   '/workspace': typeof WorkspaceRouteLazyRouteWithChildren
   '/canvas': typeof CanvasLazyRoute
@@ -134,9 +155,11 @@ export interface FileRoutesByFullPath {
   '/api/heartbeat': typeof ApiHeartbeatRouteRoute
   '/api/pulse': typeof ApiPulseRouteRoute
   '/academic/$': typeof AcademicSplatRoute
+  '/operations/$': typeof OperationsSplatRoute
   '/tabs/$': typeof TabsSplatLazyRoute
   '/workspace/$': typeof WorkspaceSplatLazyRoute
   '/academic/': typeof AcademicIndexRoute
+  '/operations/': typeof OperationsIndexRoute
   '/tabs/': typeof TabsIndexRoute
   '/workspace/': typeof WorkspaceIndexRoute
   '/channels/': typeof ChannelsIndexLazyRoute
@@ -150,9 +173,11 @@ export interface FileRoutesByTo {
   '/api/heartbeat': typeof ApiHeartbeatRouteRoute
   '/api/pulse': typeof ApiPulseRouteRoute
   '/academic/$': typeof AcademicSplatRoute
+  '/operations/$': typeof OperationsSplatRoute
   '/tabs/$': typeof TabsSplatLazyRoute
   '/workspace/$': typeof WorkspaceSplatLazyRoute
   '/academic': typeof AcademicIndexRoute
+  '/operations': typeof OperationsIndexRoute
   '/tabs': typeof TabsIndexRoute
   '/workspace': typeof WorkspaceIndexRoute
   '/channels': typeof ChannelsIndexLazyRoute
@@ -163,6 +188,7 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/settings': typeof SettingsRoute
   '/academic': typeof AcademicRouteLazyRouteWithChildren
+  '/operations': typeof OperationsRouteLazyRouteWithChildren
   '/tabs': typeof TabsRouteLazyRouteWithChildren
   '/workspace': typeof WorkspaceRouteLazyRouteWithChildren
   '/canvas': typeof CanvasLazyRoute
@@ -170,9 +196,11 @@ export interface FileRoutesById {
   '/api/heartbeat': typeof ApiHeartbeatRouteRoute
   '/api/pulse': typeof ApiPulseRouteRoute
   '/academic/$': typeof AcademicSplatRoute
+  '/operations/$': typeof OperationsSplatRoute
   '/tabs/$': typeof TabsSplatLazyRoute
   '/workspace/$': typeof WorkspaceSplatLazyRoute
   '/academic/': typeof AcademicIndexRoute
+  '/operations/': typeof OperationsIndexRoute
   '/tabs/': typeof TabsIndexRoute
   '/workspace/': typeof WorkspaceIndexRoute
   '/channels/': typeof ChannelsIndexLazyRoute
@@ -184,6 +212,7 @@ export interface FileRouteTypes {
     | '/$'
     | '/settings'
     | '/academic'
+    | '/operations'
     | '/tabs'
     | '/workspace'
     | '/canvas'
@@ -191,9 +220,11 @@ export interface FileRouteTypes {
     | '/api/heartbeat'
     | '/api/pulse'
     | '/academic/$'
+    | '/operations/$'
     | '/tabs/$'
     | '/workspace/$'
     | '/academic/'
+    | '/operations/'
     | '/tabs/'
     | '/workspace/'
     | '/channels/'
@@ -207,9 +238,11 @@ export interface FileRouteTypes {
     | '/api/heartbeat'
     | '/api/pulse'
     | '/academic/$'
+    | '/operations/$'
     | '/tabs/$'
     | '/workspace/$'
     | '/academic'
+    | '/operations'
     | '/tabs'
     | '/workspace'
     | '/channels'
@@ -219,6 +252,7 @@ export interface FileRouteTypes {
     | '/$'
     | '/settings'
     | '/academic'
+    | '/operations'
     | '/tabs'
     | '/workspace'
     | '/canvas'
@@ -226,9 +260,11 @@ export interface FileRouteTypes {
     | '/api/heartbeat'
     | '/api/pulse'
     | '/academic/$'
+    | '/operations/$'
     | '/tabs/$'
     | '/workspace/$'
     | '/academic/'
+    | '/operations/'
     | '/tabs/'
     | '/workspace/'
     | '/channels/'
@@ -239,6 +275,7 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   SettingsRoute: typeof SettingsRoute
   AcademicRouteLazyRoute: typeof AcademicRouteLazyRouteWithChildren
+  OperationsRouteLazyRoute: typeof OperationsRouteLazyRouteWithChildren
   TabsRouteLazyRoute: typeof TabsRouteLazyRouteWithChildren
   WorkspaceRouteLazyRoute: typeof WorkspaceRouteLazyRouteWithChildren
   CanvasLazyRoute: typeof CanvasLazyRoute
@@ -276,6 +313,13 @@ declare module '@tanstack/react-router' {
       path: '/canvas'
       fullPath: '/canvas'
       preLoaderRoute: typeof CanvasLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operations': {
+      id: '/operations'
+      path: '/operations'
+      fullPath: '/operations'
+      preLoaderRoute: typeof OperationsRouteLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pro': {
@@ -341,6 +385,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChannelsIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/operations/': {
+      id: '/operations/'
+      path: '/'
+      fullPath: '/operations/'
+      preLoaderRoute: typeof OperationsIndexRouteImport
+      parentRoute: typeof OperationsRouteLazyRoute
+    }
+    '/operations/$': {
+      id: '/operations/$'
+      path: '/$'
+      fullPath: '/operations/$'
+      preLoaderRoute: typeof OperationsSplatRouteImport
+      parentRoute: typeof OperationsRouteLazyRoute
+    }
     '/tabs/': {
       id: '/tabs/'
       path: '/'
@@ -385,6 +443,19 @@ const AcademicRouteLazyRouteChildren: AcademicRouteLazyRouteChildren = {
 const AcademicRouteLazyRouteWithChildren =
   AcademicRouteLazyRoute._addFileChildren(AcademicRouteLazyRouteChildren)
 
+interface OperationsRouteLazyRouteChildren {
+  OperationsSplatRoute: typeof OperationsSplatRoute
+  OperationsIndexRoute: typeof OperationsIndexRoute
+}
+
+const OperationsRouteLazyRouteChildren: OperationsRouteLazyRouteChildren = {
+  OperationsSplatRoute: OperationsSplatRoute,
+  OperationsIndexRoute: OperationsIndexRoute,
+}
+
+const OperationsRouteLazyRouteWithChildren =
+  OperationsRouteLazyRoute._addFileChildren(OperationsRouteLazyRouteChildren)
+
 interface TabsRouteLazyRouteChildren {
   TabsSplatLazyRoute: typeof TabsSplatLazyRoute
   TabsIndexRoute: typeof TabsIndexRoute
@@ -417,6 +488,7 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   SettingsRoute: SettingsRoute,
   AcademicRouteLazyRoute: AcademicRouteLazyRouteWithChildren,
+  OperationsRouteLazyRoute: OperationsRouteLazyRouteWithChildren,
   TabsRouteLazyRoute: TabsRouteLazyRouteWithChildren,
   WorkspaceRouteLazyRoute: WorkspaceRouteLazyRouteWithChildren,
   CanvasLazyRoute: CanvasLazyRoute,

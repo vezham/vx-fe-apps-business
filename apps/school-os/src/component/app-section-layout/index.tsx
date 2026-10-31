@@ -30,6 +30,7 @@ export const AppSectionLayout = ({ menuKey }: Props) => {
 
 const AppSection = ({ menuKey, pathname }: Props & { pathname: string }) => {
   const { items, section, page, tabs } = getNavigationPage(menuKey, pathname)
+  const menuTitle = navigationItems.find(item => item.key === menuKey)?.title
 
   const [search, setSearch] = useState('')
   const toolbar = getNavigationToolbar(navigationItems, pathname)
@@ -62,9 +63,7 @@ const AppSection = ({ menuKey, pathname }: Props & { pathname: string }) => {
       <SectionLayout
         sectionKey={menuKey === 'tabs' ? menuKey : section.key}
         title={menuKey === 'tabs' ? 'Demo' : section.title}
-        navigationLabel={
-          menuKey === 'academic' ? 'Academic sections' : 'Workspace sections'
-        }
+        navigationLabel={`${menuTitle} sections`}
         sidebarItems={menuKey !== 'tabs' ? items : undefined}
         tabs={tabs}
         {...actions}

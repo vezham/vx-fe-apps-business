@@ -4,7 +4,7 @@ import type { AppNavigationItem } from '@vezham/react'
 
 import { getNavigationChildren } from '@generated/navigation'
 
-export type MenuKey = 'tabs' | 'workspace' | 'academic'
+export type MenuKey = 'tabs' | 'workspace' | 'academic' | 'operations'
 
 const findPath = (
   items: AppNavigationItem[],

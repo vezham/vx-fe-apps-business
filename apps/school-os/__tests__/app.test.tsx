@@ -67,14 +67,41 @@ describe('App', () => {
     const panel = baseElement.querySelector('[data-vx="info-panel"]')
     expect(panel).toBeTruthy()
 
-    await act(() => router.navigate({ to: '/operations' }))
-    expect(router.state.location.pathname).toBe('/operations')
+    await act(() => router.navigate({ to: '/missing-page' }))
+    expect(router.state.location.pathname).toBe('/missing-page')
     expect(baseElement.querySelector('[data-vx="info-panel"]')).toBe(panel)
 
     await act(() => router.navigate({ to: '/academic/classes/allclasses' }))
     await screen.findByRole('tab', { name: 'All Classes' })
     expect(baseElement.querySelector('[data-vx="info-panel"]')).toBe(panel)
     window.localStorage.removeItem('vx-app:info-panel')
+  })
+
+  it('opens Operations and navigates between groups and standalone pages', async () => {
+    const { router } = await renderApp('/operations')
+    const sidebar = await screen.findByRole('navigation', {
+      name: 'Operations sections'
+    })
+    const feesGroup = await screen.findByRole('tab', { name: 'Fees Group' })
+    expect(feesGroup).toHaveAttribute('aria-selected', 'true')
+    expect(router.state.location.pathname).toBe('/operations/fees/fees-group')
+
+    fireEvent.click(screen.getByRole('tab', { name: 'Fees Type' }))
+    await waitFor(() =>
+      expect(screen.getByRole('tabpanel')).toHaveTextContent(
+        '/operations/fees/fees-type'
+      )
+    )
+
+    fireEvent.click(within(sidebar).getByRole('link', { name: 'Library' }))
+    const members = await screen.findByRole('tab', { name: 'Library Members' })
+    expect(members).toHaveAttribute('aria-selected', 'true')
+    expect(router.state.location.pathname).toBe('/operations/library/members')
+
+    fireEvent.click(within(sidebar).getByRole('link', { name: 'Sports' }))
+    await screen.findByText('/operations/sports')
+    expect(router.state.location.pathname).toBe('/operations/sports')
+    expect(screen.queryByRole('tablist')).toBeNull()
   })
 
   it('loads child menus as tabs and navigates between them', async () => {
