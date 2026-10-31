@@ -54,11 +54,9 @@ const AppSection = ({ menuKey, pathname }: Props & { pathname: string }) => {
   useToolbarAction('create', () => {
     toast.info('Create is not implemented on this page.')
   })
-  useToolbarAction(
-    'search',
-    () => setIsMobileSearchOpen(true),
-    { enabled: menuKey === 'academic' && Boolean(toolbar.search) }
-  )
+  useToolbarAction('search', () => setIsMobileSearchOpen(true), {
+    enabled: menuKey === 'academic' && Boolean(toolbar.search)
+  })
 
   const searchContext = useMemo(
     () => ({ query: search, setQuery: setSearch }),

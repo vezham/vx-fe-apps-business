@@ -92,18 +92,17 @@ describe('Academic navigation', () => {
     expect(screen.queryByRole('tablist')).toBeNull()
   })
 
-  it('renders timetable views in the section sidebar', async () => {
+  it('renders timetable views as section tabs', async () => {
     await renderApp('/academic/timetable')
 
-    const week = await screen.findByRole('link', { name: 'Week' })
-    expect(week).toHaveAttribute('aria-current', 'page')
-    expect(screen.queryByRole('tablist')).toBeNull()
+    const week = await screen.findByRole('tab', { name: 'Week' })
+    expect(week).toHaveAttribute('aria-selected', 'true')
 
-    fireEvent.click(screen.getByRole('link', { name: 'Month' }))
+    fireEvent.click(screen.getByRole('tab', { name: 'Month' }))
     await waitFor(() =>
-      expect(screen.getByRole('link', { name: 'Month' })).toHaveAttribute(
-        'aria-current',
-        'page'
+      expect(screen.getByRole('tab', { name: 'Month' })).toHaveAttribute(
+        'aria-selected',
+        'true'
       )
     )
   })

@@ -1,3 +1,4 @@
+import { usePageSearch } from '@component/page-search-context'
 import { CalendarDateTime } from '@internationalized/date'
 import { useLocation, useNavigate } from '@tanstack/react-router'
 import { useCallback, useMemo, useState } from 'react'
@@ -6,7 +7,6 @@ import { useAgenda } from '@vezham/react-pro-v3'
 import type { SortDescriptor } from '@vezham/react-v3'
 import { useToolbarAction } from '@vezham/react/toolbar-actions'
 
-import { usePageSearch } from '@component/page-search-context'
 import type {
   TimetableEvent,
   TimetableFilter,

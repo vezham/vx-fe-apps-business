@@ -67,8 +67,7 @@ export const classNames = {
     'sticky top-[45px] z-20 grid grid-cols-[72px_repeat(var(--timetable-day-count,6),minmax(128px,1fr))] border-b border-separator bg-surface',
   allDayLabel:
     'sticky left-0 z-30 flex items-start justify-end bg-surface px-3 py-3 text-xs font-medium text-muted',
-  allDaySlot:
-    'min-h-16 space-y-1 border-l border-separator bg-surface p-1.5',
+  allDaySlot: 'min-h-16 space-y-1 border-l border-separator bg-surface p-1.5',
   timeRows: 'relative',
   timeRow:
     'grid min-h-[var(--agenda-slot-height)] grid-cols-[72px_repeat(var(--timetable-day-count,6),minmax(128px,1fr))] border-b border-separator',
