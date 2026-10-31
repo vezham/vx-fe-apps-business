@@ -26,6 +26,7 @@ const CanvasLazyRouteImport = createFileRoute('/canvas')()
 const ProLazyRouteImport = createFileRoute('/pro')()
 const TabsRouteLazyRouteImport = createFileRoute('/tabs')()
 const WorkspaceRouteLazyRouteImport = createFileRoute('/workspace')()
+const ChannelsIndexLazyRouteImport = createFileRoute('/channels/')()
 const TabsSplatLazyRouteImport = createFileRoute('/tabs/$')()
 const WorkspaceSplatLazyRouteImport = createFileRoute('/workspace/$')()
 
@@ -93,6 +94,13 @@ const ApiPulseRouteRoute = ApiPulseRouteRouteImport.update({
   path: '/api/pulse',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChannelsIndexLazyRoute = ChannelsIndexLazyRouteImport.update({
+  id: '/channels/',
+  path: '/channels/',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./routes/channels/index.lazy').then((d) => d.Route),
+)
 const TabsIndexRoute = TabsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -131,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/academic/': typeof AcademicIndexRoute
   '/tabs/': typeof TabsIndexRoute
   '/workspace/': typeof WorkspaceIndexRoute
+  '/channels/': typeof ChannelsIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -146,6 +155,7 @@ export interface FileRoutesByTo {
   '/academic': typeof AcademicIndexRoute
   '/tabs': typeof TabsIndexRoute
   '/workspace': typeof WorkspaceIndexRoute
+  '/channels': typeof ChannelsIndexLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -165,6 +175,7 @@ export interface FileRoutesById {
   '/academic/': typeof AcademicIndexRoute
   '/tabs/': typeof TabsIndexRoute
   '/workspace/': typeof WorkspaceIndexRoute
+  '/channels/': typeof ChannelsIndexLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -185,6 +196,7 @@ export interface FileRouteTypes {
     | '/academic/'
     | '/tabs/'
     | '/workspace/'
+    | '/channels/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -200,6 +212,7 @@ export interface FileRouteTypes {
     | '/academic'
     | '/tabs'
     | '/workspace'
+    | '/channels'
   id:
     | '__root__'
     | '/'
@@ -218,6 +231,7 @@ export interface FileRouteTypes {
     | '/academic/'
     | '/tabs/'
     | '/workspace/'
+    | '/channels/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -231,6 +245,7 @@ export interface RootRouteChildren {
   ProLazyRoute: typeof ProLazyRoute
   ApiHeartbeatRouteRoute: typeof ApiHeartbeatRouteRoute
   ApiPulseRouteRoute: typeof ApiPulseRouteRoute
+  ChannelsIndexLazyRoute: typeof ChannelsIndexLazyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -319,6 +334,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPulseRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/channels/': {
+      id: '/channels/'
+      path: '/channels'
+      fullPath: '/channels/'
+      preLoaderRoute: typeof ChannelsIndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tabs/': {
       id: '/tabs/'
       path: '/'
@@ -401,6 +423,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProLazyRoute: ProLazyRoute,
   ApiHeartbeatRouteRoute: ApiHeartbeatRouteRoute,
   ApiPulseRouteRoute: ApiPulseRouteRoute,
+  ChannelsIndexLazyRoute: ChannelsIndexLazyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

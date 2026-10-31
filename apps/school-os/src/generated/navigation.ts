@@ -11,6 +11,13 @@ export const navigationItems = [
     "title": "Home"
   },
   {
+    "key": "channels",
+    "icon": "vx:library",
+    "iconActive": "vx:library-filled",
+    "href": "/channels",
+    "title": "Channels"
+  },
+  {
     "key": "pro",
     "icon": "vx:library",
     "iconActive": "vx:library-filled",
