@@ -104,6 +104,43 @@ describe('App', () => {
     expect(screen.queryByRole('tablist')).toBeNull()
   })
 
+  it('opens Reports and navigates between attendance tabs and standalone reports', async () => {
+    const { router } = await renderApp('/reports')
+    const sidebar = await screen.findByRole('navigation', {
+      name: 'Reports sections'
+    })
+    const attendance = await screen.findByRole('tab', {
+      name: 'Attendance Report'
+    })
+    expect(attendance).toHaveAttribute('aria-selected', 'true')
+    expect(router.state.location.pathname).toBe(
+      '/reports/attendance/attendance-report'
+    )
+
+    fireEvent.click(screen.getByRole('tab', { name: 'Daily Attendance' }))
+    await waitFor(() =>
+      expect(screen.getByRole('tabpanel')).toHaveTextContent(
+        '/reports/attendance/daily-attendance'
+      )
+    )
+
+    fireEvent.click(
+      within(sidebar).getByRole('link', { name: 'Class Reports' })
+    )
+    await screen.findByText('/reports/class')
+    expect(router.state.location.pathname).toBe('/reports/class')
+    expect(screen.queryByRole('tablist')).toBeNull()
+
+    fireEvent.click(
+      within(sidebar).getByRole('link', { name: 'Attendance Reports' })
+    )
+    await waitFor(() =>
+      expect(screen.getByRole('tabpanel')).toHaveTextContent(
+        '/reports/attendance/attendance-report'
+      )
+    )
+  })
+
   it('loads child menus as tabs and navigates between them', async () => {
     await renderApp('/tabs/overview')
 
