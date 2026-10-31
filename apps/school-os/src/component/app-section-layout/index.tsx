@@ -12,6 +12,7 @@ import {
 import { navigationItems } from '@generated/navigation'
 
 import { PageSearchContext } from '../page-search-context'
+import { PageSearchSheet } from '../page-search-sheet'
 import { type MenuKey, getNavigationPage } from '../section-navigation'
 import { getToolbarActions } from '../toolbar-actions'
 
@@ -33,6 +34,7 @@ const AppSection = ({ menuKey, pathname }: Props & { pathname: string }) => {
   const menuTitle = navigationItems.find(item => item.key === menuKey)?.title
 
   const [search, setSearch] = useState('')
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
   const toolbar = getNavigationToolbar(navigationItems, pathname)
   const { emit } = useToolbarActions()
   const navigationActions = getToolbarActions(
@@ -52,6 +54,11 @@ const AppSection = ({ menuKey, pathname }: Props & { pathname: string }) => {
   useToolbarAction('create', () => {
     toast.info('Create is not implemented on this page.')
   })
+  useToolbarAction(
+    'search',
+    () => setIsMobileSearchOpen(true),
+    { enabled: menuKey === 'academic' && Boolean(toolbar.search) }
+  )
 
   const searchContext = useMemo(
     () => ({ query: search, setQuery: setSearch }),
@@ -81,6 +88,16 @@ const AppSection = ({ menuKey, pathname }: Props & { pathname: string }) => {
         }>
         <Outlet />
       </SectionLayout>
+      {menuKey === 'academic' && toolbar.search && (
+        <PageSearchSheet
+          isOpen={isMobileSearchOpen}
+          label={toolbar.search.label ?? `Search ${page.title}`}
+          placeholder={toolbar.search.placeholder}
+          query={search}
+          onOpenChange={setIsMobileSearchOpen}
+          onQueryChange={setSearch}
+        />
+      )}
     </PageSearchContext.Provider>
   )
 }
