@@ -4,8 +4,7 @@ import type { AppNavigationItem } from '@vezham/react'
 
 import { getNavigationChildren } from '@generated/navigation'
 
-export type MenuKey =
-  'tabs' | 'workspace' | 'academic' | 'operations' | 'reports'
+export type MenuKey = 'academic' | 'operations' | 'reports'
 
 const findPath = (
   items: AppNavigationItem[],
@@ -25,7 +24,7 @@ export const getNavigationPage = (menuKey: MenuKey, pathname: string) => {
   if (!path) throw notFound()
   const section = path[0]
   const page = path[path.length - 1]
-  const tabs = menuKey === 'tabs' ? items : (section.children ?? [])
+  const tabs = section.children ?? []
   return { items, section, page, tabs }
 }
 

@@ -22,19 +22,11 @@ import { Route as OperationsIndexRouteImport } from './routes/operations/index'
 import { Route as OperationsSplatRouteImport } from './routes/operations/$'
 import { Route as ReportsIndexRouteImport } from './routes/reports/index'
 import { Route as ReportsSplatRouteImport } from './routes/reports/$'
-import { Route as TabsIndexRouteImport } from './routes/tabs/index'
-import { Route as WorkspaceIndexRouteImport } from './routes/workspace/index'
 
 const AcademicRouteLazyRouteImport = createFileRoute('/academic')()
-const CanvasLazyRouteImport = createFileRoute('/canvas')()
 const OperationsRouteLazyRouteImport = createFileRoute('/operations')()
-const ProLazyRouteImport = createFileRoute('/pro')()
 const ReportsRouteLazyRouteImport = createFileRoute('/reports')()
-const TabsRouteLazyRouteImport = createFileRoute('/tabs')()
-const WorkspaceRouteLazyRouteImport = createFileRoute('/workspace')()
 const ChannelsIndexLazyRouteImport = createFileRoute('/channels/')()
-const TabsSplatLazyRouteImport = createFileRoute('/tabs/$')()
-const WorkspaceSplatLazyRouteImport = createFileRoute('/workspace/$')()
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -53,11 +45,6 @@ const AcademicRouteLazyRoute = AcademicRouteLazyRouteImport.update({
 } as any).lazy(() =>
   import('./routes/academic/route.lazy').then((d) => d.Route),
 )
-const CanvasLazyRoute = CanvasLazyRouteImport.update({
-  id: '/canvas',
-  path: '/canvas',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/canvas.lazy').then((d) => d.Route))
 const OperationsRouteLazyRoute = OperationsRouteLazyRouteImport.update({
   id: '/operations',
   path: '/operations',
@@ -65,11 +52,6 @@ const OperationsRouteLazyRoute = OperationsRouteLazyRouteImport.update({
 } as any).lazy(() =>
   import('./routes/operations/route.lazy').then((d) => d.Route),
 )
-const ProLazyRoute = ProLazyRouteImport.update({
-  id: '/pro',
-  path: '/pro',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/pro.lazy').then((d) => d.Route))
 const ReportsRouteLazyRoute = ReportsRouteLazyRouteImport.update({
   id: '/reports',
   path: '/reports',
@@ -80,18 +62,6 @@ const SettingsRoute = SettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TabsRouteLazyRoute = TabsRouteLazyRouteImport.update({
-  id: '/tabs',
-  path: '/tabs',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/tabs/route.lazy').then((d) => d.Route))
-const WorkspaceRouteLazyRoute = WorkspaceRouteLazyRouteImport.update({
-  id: '/workspace',
-  path: '/workspace',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./routes/workspace/route.lazy').then((d) => d.Route),
-)
 const AcademicIndexRoute = AcademicIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -139,26 +109,6 @@ const ReportsSplatRoute = ReportsSplatRouteImport.update({
   path: '/$',
   getParentRoute: () => ReportsRouteLazyRoute,
 } as any)
-const TabsIndexRoute = TabsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => TabsRouteLazyRoute,
-} as any)
-const TabsSplatLazyRoute = TabsSplatLazyRouteImport.update({
-  id: '/$',
-  path: '/$',
-  getParentRoute: () => TabsRouteLazyRoute,
-} as any).lazy(() => import('./routes/tabs/$.lazy').then((d) => d.Route))
-const WorkspaceIndexRoute = WorkspaceIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => WorkspaceRouteLazyRoute,
-} as any)
-const WorkspaceSplatLazyRoute = WorkspaceSplatLazyRouteImport.update({
-  id: '/$',
-  path: '/$',
-  getParentRoute: () => WorkspaceRouteLazyRoute,
-} as any).lazy(() => import('./routes/workspace/$.lazy').then((d) => d.Route))
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -167,42 +117,28 @@ export interface FileRoutesByFullPath {
   '/academic': typeof AcademicRouteLazyRouteWithChildren
   '/operations': typeof OperationsRouteLazyRouteWithChildren
   '/reports': typeof ReportsRouteLazyRouteWithChildren
-  '/tabs': typeof TabsRouteLazyRouteWithChildren
-  '/workspace': typeof WorkspaceRouteLazyRouteWithChildren
-  '/canvas': typeof CanvasLazyRoute
-  '/pro': typeof ProLazyRoute
   '/api/heartbeat': typeof ApiHeartbeatRouteRoute
   '/api/pulse': typeof ApiPulseRouteRoute
   '/academic/$': typeof AcademicSplatRoute
   '/operations/$': typeof OperationsSplatRoute
   '/reports/$': typeof ReportsSplatRoute
-  '/tabs/$': typeof TabsSplatLazyRoute
-  '/workspace/$': typeof WorkspaceSplatLazyRoute
   '/academic/': typeof AcademicIndexRoute
   '/operations/': typeof OperationsIndexRoute
   '/reports/': typeof ReportsIndexRoute
-  '/tabs/': typeof TabsIndexRoute
-  '/workspace/': typeof WorkspaceIndexRoute
   '/channels/': typeof ChannelsIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/settings': typeof SettingsRoute
-  '/canvas': typeof CanvasLazyRoute
-  '/pro': typeof ProLazyRoute
   '/api/heartbeat': typeof ApiHeartbeatRouteRoute
   '/api/pulse': typeof ApiPulseRouteRoute
   '/academic/$': typeof AcademicSplatRoute
   '/operations/$': typeof OperationsSplatRoute
   '/reports/$': typeof ReportsSplatRoute
-  '/tabs/$': typeof TabsSplatLazyRoute
-  '/workspace/$': typeof WorkspaceSplatLazyRoute
   '/academic': typeof AcademicIndexRoute
   '/operations': typeof OperationsIndexRoute
   '/reports': typeof ReportsIndexRoute
-  '/tabs': typeof TabsIndexRoute
-  '/workspace': typeof WorkspaceIndexRoute
   '/channels': typeof ChannelsIndexLazyRoute
 }
 export interface FileRoutesById {
@@ -213,22 +149,14 @@ export interface FileRoutesById {
   '/academic': typeof AcademicRouteLazyRouteWithChildren
   '/operations': typeof OperationsRouteLazyRouteWithChildren
   '/reports': typeof ReportsRouteLazyRouteWithChildren
-  '/tabs': typeof TabsRouteLazyRouteWithChildren
-  '/workspace': typeof WorkspaceRouteLazyRouteWithChildren
-  '/canvas': typeof CanvasLazyRoute
-  '/pro': typeof ProLazyRoute
   '/api/heartbeat': typeof ApiHeartbeatRouteRoute
   '/api/pulse': typeof ApiPulseRouteRoute
   '/academic/$': typeof AcademicSplatRoute
   '/operations/$': typeof OperationsSplatRoute
   '/reports/$': typeof ReportsSplatRoute
-  '/tabs/$': typeof TabsSplatLazyRoute
-  '/workspace/$': typeof WorkspaceSplatLazyRoute
   '/academic/': typeof AcademicIndexRoute
   '/operations/': typeof OperationsIndexRoute
   '/reports/': typeof ReportsIndexRoute
-  '/tabs/': typeof TabsIndexRoute
-  '/workspace/': typeof WorkspaceIndexRoute
   '/channels/': typeof ChannelsIndexLazyRoute
 }
 export interface FileRouteTypes {
@@ -240,42 +168,28 @@ export interface FileRouteTypes {
     | '/academic'
     | '/operations'
     | '/reports'
-    | '/tabs'
-    | '/workspace'
-    | '/canvas'
-    | '/pro'
     | '/api/heartbeat'
     | '/api/pulse'
     | '/academic/$'
     | '/operations/$'
     | '/reports/$'
-    | '/tabs/$'
-    | '/workspace/$'
     | '/academic/'
     | '/operations/'
     | '/reports/'
-    | '/tabs/'
-    | '/workspace/'
     | '/channels/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/$'
     | '/settings'
-    | '/canvas'
-    | '/pro'
     | '/api/heartbeat'
     | '/api/pulse'
     | '/academic/$'
     | '/operations/$'
     | '/reports/$'
-    | '/tabs/$'
-    | '/workspace/$'
     | '/academic'
     | '/operations'
     | '/reports'
-    | '/tabs'
-    | '/workspace'
     | '/channels'
   id:
     | '__root__'
@@ -285,22 +199,14 @@ export interface FileRouteTypes {
     | '/academic'
     | '/operations'
     | '/reports'
-    | '/tabs'
-    | '/workspace'
-    | '/canvas'
-    | '/pro'
     | '/api/heartbeat'
     | '/api/pulse'
     | '/academic/$'
     | '/operations/$'
     | '/reports/$'
-    | '/tabs/$'
-    | '/workspace/$'
     | '/academic/'
     | '/operations/'
     | '/reports/'
-    | '/tabs/'
-    | '/workspace/'
     | '/channels/'
   fileRoutesById: FileRoutesById
 }
@@ -311,10 +217,6 @@ export interface RootRouteChildren {
   AcademicRouteLazyRoute: typeof AcademicRouteLazyRouteWithChildren
   OperationsRouteLazyRoute: typeof OperationsRouteLazyRouteWithChildren
   ReportsRouteLazyRoute: typeof ReportsRouteLazyRouteWithChildren
-  TabsRouteLazyRoute: typeof TabsRouteLazyRouteWithChildren
-  WorkspaceRouteLazyRoute: typeof WorkspaceRouteLazyRouteWithChildren
-  CanvasLazyRoute: typeof CanvasLazyRoute
-  ProLazyRoute: typeof ProLazyRoute
   ApiHeartbeatRouteRoute: typeof ApiHeartbeatRouteRoute
   ApiPulseRouteRoute: typeof ApiPulseRouteRoute
   ChannelsIndexLazyRoute: typeof ChannelsIndexLazyRoute
@@ -343,25 +245,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademicRouteLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/canvas': {
-      id: '/canvas'
-      path: '/canvas'
-      fullPath: '/canvas'
-      preLoaderRoute: typeof CanvasLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/operations': {
       id: '/operations'
       path: '/operations'
       fullPath: '/operations'
       preLoaderRoute: typeof OperationsRouteLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pro': {
-      id: '/pro'
-      path: '/pro'
-      fullPath: '/pro'
-      preLoaderRoute: typeof ProLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reports': {
@@ -376,20 +264,6 @@ declare module '@tanstack/react-router' {
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/tabs': {
-      id: '/tabs'
-      path: '/tabs'
-      fullPath: '/tabs'
-      preLoaderRoute: typeof TabsRouteLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/workspace': {
-      id: '/workspace'
-      path: '/workspace'
-      fullPath: '/workspace'
-      preLoaderRoute: typeof WorkspaceRouteLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/academic/': {
@@ -455,34 +329,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReportsSplatRouteImport
       parentRoute: typeof ReportsRouteLazyRoute
     }
-    '/tabs/': {
-      id: '/tabs/'
-      path: '/'
-      fullPath: '/tabs/'
-      preLoaderRoute: typeof TabsIndexRouteImport
-      parentRoute: typeof TabsRouteLazyRoute
-    }
-    '/tabs/$': {
-      id: '/tabs/$'
-      path: '/$'
-      fullPath: '/tabs/$'
-      preLoaderRoute: typeof TabsSplatLazyRouteImport
-      parentRoute: typeof TabsRouteLazyRoute
-    }
-    '/workspace/': {
-      id: '/workspace/'
-      path: '/'
-      fullPath: '/workspace/'
-      preLoaderRoute: typeof WorkspaceIndexRouteImport
-      parentRoute: typeof WorkspaceRouteLazyRoute
-    }
-    '/workspace/$': {
-      id: '/workspace/$'
-      path: '/$'
-      fullPath: '/workspace/$'
-      preLoaderRoute: typeof WorkspaceSplatLazyRouteImport
-      parentRoute: typeof WorkspaceRouteLazyRoute
-    }
   }
 }
 
@@ -525,33 +371,6 @@ const ReportsRouteLazyRouteChildren: ReportsRouteLazyRouteChildren = {
 const ReportsRouteLazyRouteWithChildren =
   ReportsRouteLazyRoute._addFileChildren(ReportsRouteLazyRouteChildren)
 
-interface TabsRouteLazyRouteChildren {
-  TabsSplatLazyRoute: typeof TabsSplatLazyRoute
-  TabsIndexRoute: typeof TabsIndexRoute
-}
-
-const TabsRouteLazyRouteChildren: TabsRouteLazyRouteChildren = {
-  TabsSplatLazyRoute: TabsSplatLazyRoute,
-  TabsIndexRoute: TabsIndexRoute,
-}
-
-const TabsRouteLazyRouteWithChildren = TabsRouteLazyRoute._addFileChildren(
-  TabsRouteLazyRouteChildren,
-)
-
-interface WorkspaceRouteLazyRouteChildren {
-  WorkspaceSplatLazyRoute: typeof WorkspaceSplatLazyRoute
-  WorkspaceIndexRoute: typeof WorkspaceIndexRoute
-}
-
-const WorkspaceRouteLazyRouteChildren: WorkspaceRouteLazyRouteChildren = {
-  WorkspaceSplatLazyRoute: WorkspaceSplatLazyRoute,
-  WorkspaceIndexRoute: WorkspaceIndexRoute,
-}
-
-const WorkspaceRouteLazyRouteWithChildren =
-  WorkspaceRouteLazyRoute._addFileChildren(WorkspaceRouteLazyRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
@@ -559,10 +378,6 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicRouteLazyRoute: AcademicRouteLazyRouteWithChildren,
   OperationsRouteLazyRoute: OperationsRouteLazyRouteWithChildren,
   ReportsRouteLazyRoute: ReportsRouteLazyRouteWithChildren,
-  TabsRouteLazyRoute: TabsRouteLazyRouteWithChildren,
-  WorkspaceRouteLazyRoute: WorkspaceRouteLazyRouteWithChildren,
-  CanvasLazyRoute: CanvasLazyRoute,
-  ProLazyRoute: ProLazyRoute,
   ApiHeartbeatRouteRoute: ApiHeartbeatRouteRoute,
   ApiPulseRouteRoute: ApiPulseRouteRoute,
   ChannelsIndexLazyRoute: ChannelsIndexLazyRoute,

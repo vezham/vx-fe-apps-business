@@ -82,21 +82,32 @@ describe('App', () => {
     const sidebar = await screen.findByRole('navigation', {
       name: 'Operations sections'
     })
-    const feesGroup = await screen.findByRole('tab', { name: 'Fees Group' })
-    expect(feesGroup).toHaveAttribute('aria-selected', 'true')
+    const feesGroup = await within(sidebar).findByRole('link', {
+      name: 'Fees Group'
+    })
+    expect(feesGroup).toHaveAttribute('aria-current', 'page')
+    expect(screen.queryByRole('tablist')).toBeNull()
     expect(router.state.location.pathname).toBe('/operations/fees/fees-group')
 
-    fireEvent.click(screen.getByRole('tab', { name: 'Fees Type' }))
-    await waitFor(() =>
-      expect(screen.getByRole('tabpanel')).toHaveTextContent(
-        '/operations/fees/fees-type'
-      )
-    )
+    fireEvent.click(within(sidebar).getByRole('link', { name: 'Fees Type' }))
+    await screen.findByText('/operations/fees/fees-type')
 
-    fireEvent.click(within(sidebar).getByRole('link', { name: 'Library' }))
-    const members = await screen.findByRole('tab', { name: 'Library Members' })
-    expect(members).toHaveAttribute('aria-selected', 'true')
+    fireEvent.click(within(sidebar).getByRole('button', { name: 'Library' }))
+    fireEvent.click(
+      within(sidebar).getByRole('link', { name: 'Library Members' })
+    )
+    await screen.findByText('/operations/library/members')
+    expect(
+      within(sidebar).getByRole('link', { name: 'Library Members' })
+    ).toHaveAttribute('aria-current', 'page')
     expect(router.state.location.pathname).toBe('/operations/library/members')
+
+    fireEvent.click(within(sidebar).getByRole('button', { name: 'Transport' }))
+    fireEvent.click(within(sidebar).getByRole('link', { name: 'Vehicles' }))
+    await screen.findByText('/operations/transport/vehicles')
+    expect(router.state.location.pathname).toBe(
+      '/operations/transport/vehicles'
+    )
 
     fireEvent.click(within(sidebar).getByRole('link', { name: 'Sports' }))
     await screen.findByText('/operations/sports')
@@ -104,25 +115,24 @@ describe('App', () => {
     expect(screen.queryByRole('tablist')).toBeNull()
   })
 
-  it('opens Reports and navigates between attendance tabs and standalone reports', async () => {
+  it('opens Reports and navigates between attendance sidebar pages and standalone reports', async () => {
     const { router } = await renderApp('/reports')
     const sidebar = await screen.findByRole('navigation', {
       name: 'Reports sections'
     })
-    const attendance = await screen.findByRole('tab', {
+    const attendance = await within(sidebar).findByRole('link', {
       name: 'Attendance Report'
     })
-    expect(attendance).toHaveAttribute('aria-selected', 'true')
+    expect(attendance).toHaveAttribute('aria-current', 'page')
+    expect(screen.queryByRole('tablist')).toBeNull()
     expect(router.state.location.pathname).toBe(
       '/reports/attendance/attendance-report'
     )
 
-    fireEvent.click(screen.getByRole('tab', { name: 'Daily Attendance' }))
-    await waitFor(() =>
-      expect(screen.getByRole('tabpanel')).toHaveTextContent(
-        '/reports/attendance/daily-attendance'
-      )
+    fireEvent.click(
+      within(sidebar).getByRole('link', { name: 'Daily Attendance' })
     )
+    await screen.findByText('/reports/attendance/daily-attendance')
 
     fireEvent.click(
       within(sidebar).getByRole('link', { name: 'Class Reports' })
@@ -131,49 +141,10 @@ describe('App', () => {
     expect(router.state.location.pathname).toBe('/reports/class')
     expect(screen.queryByRole('tablist')).toBeNull()
 
-    fireEvent.click(
-      within(sidebar).getByRole('link', { name: 'Attendance Reports' })
+    await act(() =>
+      router.navigate({ to: '/reports/$', params: { _splat: 'attendance' } })
     )
-    await waitFor(() =>
-      expect(screen.getByRole('tabpanel')).toHaveTextContent(
-        '/reports/attendance/attendance-report'
-      )
-    )
-  })
-
-  it('loads child menus as tabs and navigates between them', async () => {
-    await renderApp('/tabs/overview')
-
-    const activity = await screen.findByRole('tab', { name: 'Activity' })
-    fireEvent.click(activity)
-
-    await waitFor(() =>
-      expect(activity.getAttribute('aria-selected')).toBe('true')
-    )
-    expect(screen.getByRole('tabpanel').textContent).toContain('/tabs/activity')
-  })
-
-  it('loads sidebar sections with their own route tabs', async () => {
-    await renderApp('/workspace/projects/activity')
-
-    const sidebar = await screen.findByRole('navigation', {
-      name: 'Workspace sections'
-    })
-    expect(
-      screen
-        .getByRole('tab', { name: 'Activity' })
-        .getAttribute('aria-selected')
-    ).toBe('true')
-    fireEvent.click(within(sidebar).getByRole('link', { name: 'Team' }))
-
-    const members = await screen.findByRole('tab', { name: 'Members' })
-    expect(members.getAttribute('aria-selected')).toBe('true')
-    fireEvent.click(screen.getByRole('tab', { name: 'Roles' }))
-    await waitFor(() =>
-      expect(screen.getByRole('tabpanel').textContent).toContain(
-        '/workspace/team/roles'
-      )
-    )
+    await screen.findByText('/reports/attendance/attendance-report')
   })
 
   it('keeps navigation collapsed while changing child routes', async () => {
@@ -182,29 +153,29 @@ describe('App', () => {
       ...matchMedia(query),
       matches: query === '(min-width: 768px)'
     }))
-    await renderApp('/workspace/projects/overview')
-    await screen.findByRole('navigation', { name: 'Workspace sections' })
+    await renderApp('/operations/hostel/hostel-list')
+    await screen.findByRole('navigation', { name: 'Operations sections' })
     const hideSidebar = screen
       .getAllByRole('button', { name: 'Hide Sidebar' })
       .find(button => button.hasAttribute('aria-controls'))
     if (!hideSidebar) throw new Error('Hide Sidebar control was not found')
     fireEvent.click(hideSidebar)
     expect(
-      screen.queryByRole('navigation', { name: 'Workspace sections' })
+      screen.queryByRole('navigation', { name: 'Operations sections' })
     ).toBeNull()
-    fireEvent.click(screen.getByRole('tab', { name: 'Activity' }))
+    fireEvent.click(screen.getByRole('tab', { name: 'Hostel Room' }))
     await waitFor(() =>
       expect(screen.getByRole('tabpanel').textContent).toContain(
-        '/workspace/projects/activity'
+        '/operations/hostel/hostel-room'
       )
     )
     expect(
-      screen.queryByRole('navigation', { name: 'Workspace sections' })
+      screen.queryByRole('navigation', { name: 'Operations sections' })
     ).toBeNull()
     fireEvent.keyDown(document.body, { key: 's', code: 'KeyS', metaKey: true })
     fireEvent.keyUp(document.body, { key: 's', code: 'KeyS', metaKey: true })
     expect(
-      screen.getByRole('navigation', { name: 'Workspace sections' })
+      screen.getByRole('navigation', { name: 'Operations sections' })
     ).toBeTruthy()
   })
 
@@ -214,28 +185,20 @@ describe('App', () => {
       ...matchMedia(query),
       matches: query === '(max-width: 767px)'
     }))
-    await renderApp('/workspace/projects/overview')
+    await renderApp('/operations/hostel/hostel-list')
     const bubble = await screen.findByRole('group', {
       name: 'Mobile navigation controls'
     })
     fireEvent.click(
       await within(bubble).findByRole('button', { name: 'Show Sidebar' })
     )
-    const drawer = await screen.findByRole('dialog', { name: 'Projects' })
-    fireEvent.click(within(drawer).getByRole('link', { name: 'Team' }))
-    await screen.findByRole('tab', { name: 'Members' })
+    const drawer = await screen.findByRole('dialog', {
+      name: 'Hostel'
+    })
+    fireEvent.click(within(drawer).getByRole('link', { name: 'Sports' }))
+    await screen.findByText('/operations/sports')
     await waitFor(() =>
-      expect(screen.queryByRole('dialog', { name: 'Projects' })).toBeNull()
-    )
-  })
-
-  it.each([
-    ['/tabs', '/tabs/overview'],
-    ['/workspace', '/workspace/projects/overview']
-  ])('opens the default child at %s', async (path, title) => {
-    await renderApp(path)
-    await waitFor(() =>
-      expect(screen.getByRole('tabpanel').textContent).toContain(title)
+      expect(screen.queryByRole('dialog', { name: 'Hostel' })).toBeNull()
     )
   })
 })

@@ -86,6 +86,10 @@ while selecting only the files and features required by the chosen app type.
 Treat School OS as a clean starting point, not as an upgrade target for an earlier
 implementation.
 
+School OS navigation contains Home, Channels, Academic, Operations, and Reports.
+Keep the Pro, Canvas, Tabs, and Workspace examples out of this app; exercise shared
+navigation behavior through its product sections.
+
 Apply these rules whenever reviewing, migrating, or optimizing either app:
 
 - Optimize for the current stack and generated output. Do not add aliases,

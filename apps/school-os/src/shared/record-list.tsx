@@ -742,18 +742,16 @@ export const EntityTable = <Row extends EntityRecord, Key extends string>({
                     isRowHeader={index === 0}
                     minWidth={column.minWidth}>
                     {({ sortDirection }) => (
-                      <>
-                        <span className="flex items-center gap-2">
-                          {column.label}
-                          {sortDirection === 'ascending' ? (
-                            <AltArrowUp size={14} aria-hidden="true" />
-                          ) : sortDirection === 'descending' ? (
-                            <AltArrowDown size={14} aria-hidden="true" />
-                          ) : (
-                            <SortVertical size={14} aria-hidden="true" />
-                          )}
-                        </span>
-                      </>
+                      <span className="flex items-center gap-2">
+                        {column.label}
+                        {sortDirection === 'ascending' ? (
+                          <AltArrowUp size={14} aria-hidden="true" />
+                        ) : sortDirection === 'descending' ? (
+                          <AltArrowDown size={14} aria-hidden="true" />
+                        ) : (
+                          <SortVertical size={14} aria-hidden="true" />
+                        )}
+                      </span>
                     )}
                   </Table.Column>
                 ))}

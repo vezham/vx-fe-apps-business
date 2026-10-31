@@ -61,10 +61,10 @@ const AppSection = ({ menuKey, pathname }: Props & { pathname: string }) => {
   return (
     <PageSearchContext.Provider value={searchContext}>
       <SectionLayout
-        sectionKey={menuKey === 'tabs' ? menuKey : section.key}
-        title={menuKey === 'tabs' ? 'Demo' : section.title}
+        sectionKey={section.key}
+        title={section.title}
         navigationLabel={`${menuTitle} sections`}
-        sidebarItems={menuKey !== 'tabs' ? items : undefined}
+        sidebarItems={items}
         tabs={tabs}
         {...actions}
         onSync={() => {

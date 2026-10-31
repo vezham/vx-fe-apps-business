@@ -18,220 +18,6 @@ export const navigationItems = [
     "title": "Channels"
   },
   {
-    "key": "pro",
-    "icon": "vx:library",
-    "iconActive": "vx:library-filled",
-    "href": "/pro",
-    "title": "Pro"
-  },
-  {
-    "key": "canvas",
-    "icon": "vx:palette",
-    "iconActive": "vx:palette-filled",
-    "href": "/canvas",
-    "title": "Canvas"
-  },
-  {
-    "key": "tabs",
-    "title": "Tabs",
-    "icon": "vx:library",
-    "iconActive": "vx:library-filled",
-    "href": "/tabs/overview",
-    "toolbar": {
-      "search": true,
-      "sync": true,
-      "filter": true,
-      "sort": true,
-      "view": [
-        {
-          "key": "grid",
-          "label": "Grid view",
-          "icon": "vx:grid"
-        },
-        {
-          "key": "list",
-          "label": "List view",
-          "icon": "vx:list"
-        }
-      ],
-      "menuActions": [
-        {
-          "key": "import",
-          "label": "Import",
-          "icon": "vx:upload"
-        },
-        {
-          "key": "print",
-          "label": "Print",
-          "icon": "vx:printer"
-        },
-        {
-          "key": "export",
-          "label": "Export",
-          "icon": "vx:download",
-          "children": [
-            {
-              "key": "export-pdf",
-              "label": "Export as PDF",
-              "icon": "vx:file-text"
-            },
-            {
-              "key": "export-excel",
-              "label": "Export as Excel",
-              "icon": "vx:file-spreadsheet"
-            }
-          ]
-        }
-      ],
-      "primaryAction": false
-    },
-    "children": [
-      {
-        "key": "overview",
-        "title": "Overview",
-        "href": "/tabs/overview",
-        "toolbar": {
-          "primaryAction": {
-            "key": "create",
-            "label": "Add Overview",
-            "icon": "vx:plus"
-          }
-        }
-      },
-      {
-        "key": "activity",
-        "title": "Activity",
-        "href": "/tabs/activity",
-        "toolbar": {
-          "primaryAction": {
-            "key": "create",
-            "label": "Add Activity",
-            "icon": "vx:plus"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "key": "workspace",
-    "title": "Workspace",
-    "icon": "vx:library",
-    "iconActive": "vx:library-filled",
-    "href": "/workspace/projects/overview",
-    "toolbar": {
-      "search": true,
-      "sync": true,
-      "filter": true,
-      "sort": true,
-      "view": [
-        {
-          "key": "grid",
-          "label": "Grid view",
-          "icon": "vx:grid"
-        },
-        {
-          "key": "list",
-          "label": "List view",
-          "icon": "vx:list"
-        }
-      ],
-      "menuActions": [
-        {
-          "key": "import",
-          "label": "Import",
-          "icon": "vx:upload"
-        },
-        {
-          "key": "print",
-          "label": "Print",
-          "icon": "vx:printer"
-        },
-        {
-          "key": "export",
-          "label": "Export",
-          "icon": "vx:download",
-          "children": [
-            {
-              "key": "export-pdf",
-              "label": "Export as PDF",
-              "icon": "vx:file-text"
-            },
-            {
-              "key": "export-excel",
-              "label": "Export as Excel",
-              "icon": "vx:file-spreadsheet"
-            }
-          ]
-        }
-      ],
-      "primaryAction": false
-    },
-    "children": [
-      {
-        "key": "projects",
-        "title": "Projects",
-        "href": "/workspace/projects/overview",
-        "children": [
-          {
-            "key": "overview",
-            "title": "Overview",
-            "href": "/workspace/projects/overview",
-            "toolbar": {
-              "primaryAction": {
-                "key": "create",
-                "label": "Add Overview",
-                "icon": "vx:plus"
-              }
-            }
-          },
-          {
-            "key": "activity",
-            "title": "Activity",
-            "href": "/workspace/projects/activity",
-            "toolbar": {
-              "primaryAction": {
-                "key": "create",
-                "label": "Add Activity",
-                "icon": "vx:plus"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "key": "team",
-        "title": "Team",
-        "href": "/workspace/team/members",
-        "children": [
-          {
-            "key": "members",
-            "title": "Members",
-            "href": "/workspace/team/members",
-            "toolbar": {
-              "primaryAction": {
-                "key": "create",
-                "label": "Add Members",
-                "icon": "vx:plus"
-              }
-            }
-          },
-          {
-            "key": "roles",
-            "title": "Roles",
-            "href": "/workspace/team/roles",
-            "toolbar": {
-              "primaryAction": {
-                "key": "create",
-                "label": "Add Roles",
-                "icon": "vx:plus"
-              }
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
     "key": "academic",
     "icon": "vx:library",
     "iconActive": "vx:library-filled",
@@ -574,6 +360,7 @@ export const navigationItems = [
       {
         "key": "fees",
         "title": "Fees Collections",
+        "childrenDisplay": "sidebar",
         "href": "/operations/fees",
         "icon": "vx:calendar-check",
         "children": [
@@ -647,6 +434,7 @@ export const navigationItems = [
       {
         "key": "library",
         "title": "Library",
+        "childrenDisplay": "sidebar",
         "href": "/operations/library",
         "icon": "vx:school",
         "children": [
@@ -780,6 +568,7 @@ export const navigationItems = [
       {
         "key": "transport",
         "title": "Transport",
+        "childrenDisplay": "sidebar",
         "href": "/operations/transport",
         "icon": "vx:calendar-minus",
         "children": [
@@ -910,6 +699,7 @@ export const navigationItems = [
       {
         "key": "attendance",
         "title": "Attendance Reports",
+        "childrenDisplay": "sidebar",
         "href": "/reports/attendance",
         "icon": "vx:calendar-check",
         "children": [

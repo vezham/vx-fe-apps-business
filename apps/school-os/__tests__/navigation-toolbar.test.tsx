@@ -42,12 +42,12 @@ describe('Navigation toolbar', () => {
   })
 
   it('opens page search without opening command search', async () => {
-    await renderApp('/tabs/overview')
+    await renderApp('/operations/fees/fees-group')
     fireEvent.click(await screen.findByRole('button', { name: 'Search' }))
     const dialog = await screen.findByRole('dialog', { name: 'Search content' })
     const search = within(dialog).getByRole('searchbox')
-    fireEvent.change(search, { target: { value: 'overview' } })
-    expect((search as HTMLInputElement).value).toBe('overview')
+    fireEvent.change(search, { target: { value: 'fees' } })
+    expect((search as HTMLInputElement).value).toBe('fees')
     expect(screen.queryByPlaceholderText(/Search commands/)).toBeNull()
   })
 
