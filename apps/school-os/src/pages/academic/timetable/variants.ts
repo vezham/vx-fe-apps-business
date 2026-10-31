@@ -36,43 +36,45 @@ export const classNames = {
   fieldLabel: 'font-bold text-[#111827]',
   fieldError: 'text-danger text-sm',
   statusRow: 'flex items-center justify-between gap-6',
-  calendarShell: 'flex min-h-0 w-full flex-1 flex-col overflow-hidden bg-white',
+  calendarShell:
+    'flex min-h-0 w-full flex-1 flex-col overflow-hidden bg-surface text-foreground',
   calendarHeader:
-    'flex items-center justify-between gap-3 bg-white px-3 py-2.5 max-md:flex-col max-md:items-center',
+    'flex items-center justify-between gap-3 bg-surface px-3 py-2.5 max-md:flex-col max-md:items-center',
   calendarHeading:
-    'min-w-0 truncate text-left text-xl font-semibold text-[#111827] max-md:justify-self-center max-md:text-center',
+    'min-w-0 truncate text-left text-xl font-semibold text-foreground max-md:justify-self-center max-md:text-center',
   calendarNavigation: 'flex items-center justify-center gap-1',
   calendarNavButton: 'size-9 rounded-full p-0',
   calendarTodayButton: 'min-w-20 rounded-full',
   agendaWrapper:
-    'min-h-0 w-full flex-1 overflow-hidden [--agenda-current-time-color:var(--color-danger)] [--agenda-event-radius:8px] [--agenda-slot-height:64px] max-md:[--agenda-time-column-width:52px]',
+    'min-h-0 w-full flex-1 overflow-hidden bg-surface [--agenda-current-time-color:var(--color-danger)] [--agenda-event-radius:8px] [--agenda-slot-height:64px] max-md:[--agenda-time-column-width:52px]',
   agenda:
-    'flex h-full min-h-0 flex-col overflow-hidden [--agenda-current-time-color:var(--color-danger)] [--agenda-event-radius:8px] [--agenda-slot-height:64px] max-md:[--agenda-time-column-width:52px]',
+    'flex h-full min-h-0 flex-col overflow-hidden bg-surface [--agenda-current-time-color:var(--color-danger)] [--agenda-event-radius:8px] [--agenda-slot-height:64px] max-md:[--agenda-time-column-width:52px]',
   agendaHeader:
-    'z-20 flex flex-wrap items-center justify-between gap-3 border-b border-[#e8edf6] bg-white px-4 py-3 max-md:flex-col max-md:items-stretch',
-  agendaHeading: 'text-lg font-semibold text-[#111827]',
+    'z-20 flex flex-wrap items-center justify-between gap-3 border-b border-separator bg-surface px-4 py-3 max-md:flex-col max-md:items-stretch',
+  agendaHeading: 'text-lg font-semibold text-foreground',
   agendaNavigation: 'flex items-center gap-2',
   agendaBody: 'min-h-0 flex-1 overflow-auto overscroll-contain',
   viewSelector: 'flex flex-wrap items-center gap-2',
   emptyState:
     'flex h-full min-h-96 items-center justify-center text-sm text-muted',
-  timeGrid: 'relative min-w-[920px] bg-white',
+  timeGrid: 'relative min-w-[920px] bg-surface',
   timeGridHeader:
-    'sticky top-0 z-20 grid grid-cols-[72px_repeat(var(--timetable-day-count,6),minmax(128px,1fr))] border-b border-[#e8edf6] bg-white',
+    'sticky top-0 z-20 grid grid-cols-[72px_repeat(var(--timetable-day-count,6),minmax(128px,1fr))] border-b border-separator bg-surface',
   dayHeader:
-    'flex items-center justify-center gap-2 border-l border-[#e8edf6] px-3 py-3 text-sm font-medium text-[#6b7280]',
-  dayHeaderToday: 'font-semibold text-[#111827]',
+    'flex items-center justify-center gap-2 border-l border-separator px-3 py-3 text-sm font-medium text-muted',
+  dayHeaderToday: 'font-semibold text-foreground',
   allDayRow:
-    'sticky top-[45px] z-20 grid grid-cols-[72px_repeat(var(--timetable-day-count,6),minmax(128px,1fr))] border-b border-[#e8edf6] bg-white',
+    'sticky top-[45px] z-20 grid grid-cols-[72px_repeat(var(--timetable-day-count,6),minmax(128px,1fr))] border-b border-separator bg-surface',
   allDayLabel:
-    'sticky left-0 z-30 flex items-start justify-end bg-white px-3 py-3 text-xs font-medium text-muted',
-  allDaySlot: 'min-h-16 space-y-1 border-l border-[#eef2f7] bg-white p-1.5',
+    'sticky left-0 z-30 flex items-start justify-end bg-surface px-3 py-3 text-xs font-medium text-muted',
+  allDaySlot:
+    'min-h-16 space-y-1 border-l border-separator bg-surface p-1.5',
   timeRows: 'relative',
   timeRow:
-    'grid min-h-[var(--agenda-slot-height)] grid-cols-[72px_repeat(var(--timetable-day-count,6),minmax(128px,1fr))] border-b border-[#eef2f7]',
+    'grid min-h-[var(--agenda-slot-height)] grid-cols-[72px_repeat(var(--timetable-day-count,6),minmax(128px,1fr))] border-b border-separator',
   timeLabel:
-    'sticky left-0 z-10 bg-white px-3 py-2 text-right text-xs font-medium text-muted',
-  slot: 'min-h-[var(--agenda-slot-height)] border-l border-[#eef2f7] p-1.5',
+    'sticky left-0 z-10 bg-surface px-3 py-2 text-right text-xs font-medium text-muted',
+  slot: 'min-h-[var(--agenda-slot-height)] border-l border-separator p-1.5',
   currentTimeIndicator:
     'pointer-events-none absolute left-0 right-0 z-30 flex translate-y-[-50%] items-center [top:calc(var(--timetable-current-offset)*var(--agenda-slot-height))]',
   currentTimeBadge:
@@ -85,15 +87,15 @@ export const classNames = {
   eventContent:
     'flex h-full min-h-0 min-w-0 flex-col justify-start gap-0.5 overflow-hidden leading-tight',
   eventTeacher:
-    'mt-0.5 flex min-h-5 min-w-0 items-center gap-1 rounded-md bg-white/80 px-1 py-0 text-[10px] font-medium leading-none opacity-95 shadow-sm',
+    'mt-0.5 flex min-h-5 min-w-0 items-center gap-1 rounded-md bg-surface/80 px-1 py-0 text-[10px] font-medium leading-none opacity-95 shadow-sm',
   eventMeta: 'text-[10px] leading-none opacity-80',
-  monthGrid: 'grid min-w-[920px] grid-cols-7 bg-white',
+  monthGrid: 'grid min-w-[920px] grid-cols-7 bg-surface',
   monthWeekday:
-    'sticky top-0 z-20 border-b border-l border-[#e8edf6] bg-white px-3 py-3 text-center text-sm font-medium text-[#6b7280] first:border-l-0',
+    'sticky top-0 z-20 border-b border-l border-separator bg-surface px-3 py-3 text-center text-sm font-medium text-muted first:border-l-0',
   monthCell:
-    'min-h-36 border-b border-l border-[#eef2f7] bg-white p-2 first:border-l-0',
+    'min-h-36 border-b border-l border-separator bg-surface p-2 first:border-l-0',
   monthCellMuted:
-    'min-h-36 border-b border-l border-[#eef2f7] bg-[#fbfcfe] p-2 text-muted first:border-l-0',
+    'min-h-36 border-b border-l border-separator bg-surface-secondary p-2 text-muted first:border-l-0',
   monthCellToday: 'bg-danger/[0.03]',
   monthDate: 'mb-2 flex justify-end text-sm font-semibold',
   monthNowLine:
@@ -103,14 +105,14 @@ export const classNames = {
     'truncate rounded-md bg-primary/10 px-2 py-1 text-left text-xs font-medium text-primary-700',
   moreEvents: 'text-xs text-muted',
   yearGrid:
-    'grid max-h-[calc(100dvh-14rem)] grid-cols-1 gap-px overflow-auto bg-[#e8edf6] p-px sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
-  yearMonth: 'min-w-0 bg-white p-3',
-  yearMonthTitle: 'mb-2 text-sm font-semibold text-[#111827]',
+    'grid max-h-[calc(100dvh-14rem)] grid-cols-1 gap-px overflow-auto bg-separator p-px sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
+  yearMonth: 'min-w-0 bg-surface p-3',
+  yearMonthTitle: 'mb-2 text-sm font-semibold text-foreground',
   yearWeekdays:
     'mb-1 grid grid-cols-7 text-center text-[10px] font-medium text-muted',
   yearMonthGrid: 'grid grid-cols-7 gap-y-1',
   yearDayCell:
-    'flex min-h-8 flex-col items-center justify-start gap-0.5 text-xs text-[#374151]',
+    'flex min-h-8 flex-col items-center justify-start gap-0.5 text-xs text-foreground',
   yearDay: 'inline-flex size-6 items-center justify-center',
   yearDayToday:
     'inline-flex size-6 items-center justify-center rounded-full bg-danger font-semibold text-white',

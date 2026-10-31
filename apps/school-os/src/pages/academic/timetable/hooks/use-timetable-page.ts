@@ -6,6 +6,7 @@ import { useAgenda } from '@vezham/react-pro-v3'
 import type { SortDescriptor } from '@vezham/react-v3'
 import { useToolbarAction } from '@vezham/react/toolbar-actions'
 
+import { usePageSearch } from '@component/page-search-context'
 import type {
   TimetableEvent,
   TimetableFilter,
@@ -53,9 +54,9 @@ const getTimetableView = (pathname: string): TimetableView => {
 export const useTimetablePage = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
+  const { query: searchQuery } = usePageSearch()
   const { data: timetableEvents } = useTimetable.list({})
   const [events, setEvents] = useState<TimetableEvent[]>(timetableEvents)
-  const [searchQuery] = useState('')
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>({
     column: 'start',
     direction: 'ascending'
