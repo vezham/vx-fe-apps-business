@@ -25,6 +25,10 @@
       {
         "files": ["apps*/**/src/pages/{home,pro}/index.tsx"],
         "rules": ["react-doctor/duplicate-jsx-subtree"]
+      },
+      {
+        "files": ["apps/school-os/src/shared/page.tsx"],
+        "rules": ["react-doctor/nextjs-missing-metadata"]
       }
     ]
   }

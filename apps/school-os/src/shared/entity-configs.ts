@@ -35,7 +35,7 @@ const withDefaults = (columns: readonly Column[]) =>
 
 const unique = (values: readonly string[]) => [...new Set(values)]
 
-export const defineAcademicConfig = ({
+const defineAcademicConfig = ({
   columns,
   entityLabel,
   pluralLabel,
@@ -1311,114 +1311,6 @@ export const examResultsConfig = defineAcademicConfig({
       percent: '70',
       grade: 'B+',
       result: 'Pass',
-      status: 'Active'
-    }
-  ])
-})
-
-export const timetableConfig = defineAcademicConfig({
-  columns: [
-    { id: 'id', label: 'ID', defaultWidth: 170 },
-    { id: 'name', label: 'Subject', defaultWidth: 180 },
-    { id: 'teacher', label: 'Teacher', defaultWidth: 180 },
-    { id: 'day', label: 'Day', defaultWidth: 120 },
-    { id: 'className', label: 'Class', defaultWidth: 130 },
-    { id: 'room', label: 'Room', defaultWidth: 150 },
-    { id: 'status', label: 'Status', defaultWidth: 130 },
-    { id: 'createdAt', label: 'Created At', defaultWidth: 150 }
-  ],
-  entityLabel: 'Timetable',
-  pluralLabel: 'Timetables',
-  fields: [
-    { id: 'name', label: 'Subject' },
-    { id: 'teacher', label: 'Teacher' },
-    { id: 'day', label: 'Day' },
-    { id: 'className', label: 'Class' },
-    { id: 'room', label: 'Room' }
-  ],
-  filterKeys: ['name', 'teacher', 'day', 'className', 'status'],
-  pageKey: 'timetable',
-  pathname: '/academic/timetable',
-  records: records([
-    {
-      id: 'tt-assembly-mon',
-      name: 'Assembly',
-      teacher: 'House Coordinators',
-      day: 'Monday',
-      className: 'Grade 10',
-      room: 'Auditorium',
-      status: 'Active'
-    },
-    {
-      id: 'tt-maths-mon',
-      name: 'Maths',
-      teacher: 'Anjali Rao',
-      day: 'Monday',
-      className: 'Grade 10',
-      room: 'Room 201',
-      status: 'Active'
-    },
-    {
-      id: 'tt-physics-mon',
-      name: 'Physics',
-      teacher: 'Raghav Menon',
-      day: 'Monday',
-      className: 'Grade 10',
-      room: 'Physics Lab',
-      status: 'Active'
-    },
-    {
-      id: 'tt-english-mon',
-      name: 'English',
-      teacher: 'Meera Iyer',
-      day: 'Monday',
-      className: 'Grade 10',
-      room: 'Room 201',
-      status: 'Active'
-    },
-    {
-      id: 'tt-lunch-mon',
-      name: 'Lunch Break',
-      teacher: 'Class Mentor',
-      day: 'Monday',
-      className: 'Grade 10',
-      room: 'Cafeteria',
-      status: 'Active'
-    },
-    {
-      id: 'tt-cs-mon',
-      name: 'Computer Science',
-      teacher: 'Kavya Shah',
-      day: 'Monday',
-      className: 'Grade 10',
-      room: 'Computer Lab',
-      status: 'Active'
-    },
-    {
-      id: 'tt-chem-mon',
-      name: 'Chemistry',
-      teacher: 'Nikhil Varma',
-      day: 'Monday',
-      className: 'Grade 10',
-      room: 'Chemistry Lab',
-      status: 'Active'
-    },
-    {
-      id: 'tt-biology-tue',
-      name: 'Biology',
-      teacher: 'Priya Nair',
-      day: 'Tuesday',
-      className: 'Grade 10',
-      room: 'Biology Lab',
-      status: 'Active'
-    },
-    {
-      id: 'tt-sports-tue',
-      name: 'Sports',
-      teacher: 'Arun Das',
-      day: 'Tuesday',
-      className: 'Grade 10',
-      room: 'Sports Ground',
       status: 'Active'
     }
   ])

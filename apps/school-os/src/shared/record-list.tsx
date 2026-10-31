@@ -236,20 +236,6 @@ export type EntityToolbarProps<Key extends string> = {
   onVisibleColumnsChange: (columns: Set<Key>) => void
 }
 
-export const getEntityStatusColor = (
-  status: string
-): 'success' | 'danger' | 'accent' => {
-  if (status === 'Active' || status === 'Present' || status === 'Pass') {
-    return 'success'
-  }
-
-  if (status === 'Inactive' || status === 'Absent' || status === 'Fail') {
-    return 'danger'
-  }
-
-  return 'accent'
-}
-
 const toolbarButtonClassName = 'h-9 w-9 min-w-9 shrink-0 rounded-full p-0'
 
 const EntityFilterFields = <Key extends string>({

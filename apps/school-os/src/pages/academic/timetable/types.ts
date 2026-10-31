@@ -1,7 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react'
 
 import { useAgenda } from '@vezham/react-pro-v3'
-import { type SortDescriptor } from '@vezham/react-v3'
 
 import type {
   DrawerState,
@@ -32,16 +31,6 @@ export type FilterDropdownProps = {
   onApply: () => void
   onReset: () => void
   setDraftFilters: Dispatch<SetStateAction<TimetableFilter>>
-}
-
-export type TimetableToolbarProps = {
-  activeSortLabel: string
-  draftFilters: TimetableFilter
-  onApplyFilters: () => void
-  onResetFilters: () => void
-  onSortChange: (descriptor: SortDescriptor) => void
-  setDraftFilters: Dispatch<SetStateAction<TimetableFilter>>
-  sortDescriptor: SortDescriptor
 }
 
 export type TimetableCalendarProps = {
