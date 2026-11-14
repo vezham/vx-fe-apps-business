@@ -3,8 +3,14 @@ import type { ReactNode } from 'react'
 import { useState } from 'react'
 
 import { Book, Pen } from '@vezham/icons-react'
-import { Sheet } from '@vezham/react-pro-v3'
-import { Button, Chip, Surface, Tooltip, useMediaQuery } from '@vezham/react-v3'
+import {
+  Button,
+  Chip,
+  Sheet,
+  Surface,
+  Tooltip,
+  useMediaQuery
+} from '@vezham/react-v3'
 
 import { classDetailTabs } from './data'
 import type { ClassDetailTab, ClassRecord } from './types'
@@ -259,8 +265,6 @@ const ClassDetailsSheetContent = ({
     <Sheet
       isOpen={Boolean(classRecord)}
       placement={isCompactSheet ? 'bottom' : 'right'}
-      isHandleOnly={isCompactSheet}
-      shouldAutoFocus={isCompactSheet}
       onOpenChange={onOpenChange}>
       <Sheet.Backdrop variant="blur" className="bg-overlay/10">
         <Sheet.Content

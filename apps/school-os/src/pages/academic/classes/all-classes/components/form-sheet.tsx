@@ -2,13 +2,13 @@ import { StatusSwitchContent } from '@component/status-switch-content'
 import type { ChangeEvent } from 'react'
 import { useState } from 'react'
 
-import { Sheet } from '@vezham/react-pro-v3'
 import {
   Button,
   InputGroup,
   Label,
   ListBox,
   Select,
+  Sheet,
   Switch,
   TextField,
   useMediaQuery
@@ -182,8 +182,6 @@ export const ClassFormSheet = ({
     <Sheet
       isOpen={isOpen}
       placement={isCompactSheet ? 'bottom' : 'right'}
-      isHandleOnly={isCompactSheet}
-      shouldAutoFocus={isCompactSheet}
       onOpenChange={onOpenChange}>
       <Sheet.Backdrop variant="blur" className="bg-overlay/10">
         <Sheet.Content

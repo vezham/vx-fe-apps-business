@@ -458,7 +458,9 @@ const ClassesToolbarControls = ({
 )
 
 export const ClassesHeaderToolbar = (props: ClassesToolbarProps) => {
-  const isCompactToolbar = useMediaQuery('(max-width: 767px)')
+  const isCompactToolbar = useMediaQuery('(max-width: 767px)', {
+    initializeWithValue: false
+  })
 
   if (isCompactToolbar) return null
 

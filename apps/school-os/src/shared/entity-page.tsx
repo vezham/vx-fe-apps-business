@@ -8,12 +8,12 @@ import type { ReactNode } from 'react'
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react'
 
 import { Book, Pen } from '@vezham/icons-react'
-import { Sheet } from '@vezham/react-pro-v3'
 import {
   Button,
   Chip,
   InputGroup,
   Label,
+  Sheet,
   Surface,
   Switch,
   TextField,
@@ -95,8 +95,6 @@ const EntityEditor = <Row extends EntityRecord, Key extends string>({
     <Sheet
       isOpen={isOpen}
       placement={isCompactSheet ? 'bottom' : 'right'}
-      isHandleOnly={isCompactSheet}
-      shouldAutoFocus={isCompactSheet}
       onOpenChange={onOpenChange}>
       <Sheet.Backdrop variant="blur" className="bg-overlay/10">
         <Sheet.Content
@@ -283,8 +281,6 @@ const EntityDetails = <Row extends EntityRecord, Key extends string>({
     <Sheet
       isOpen={Boolean(record)}
       placement={isCompactSheet ? 'bottom' : 'right'}
-      isHandleOnly={isCompactSheet}
-      shouldAutoFocus={isCompactSheet}
       onOpenChange={onOpenChange}>
       <Sheet.Backdrop variant="blur" className="bg-overlay/10">
         <Sheet.Content

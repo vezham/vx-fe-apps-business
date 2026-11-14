@@ -45,6 +45,15 @@ const renderDemoLayout = async () => {
   return render(<RouterProvider router={router} />)
 }
 
+const finishSheetEnter = async (dialog: HTMLElement) => {
+  const scroller = dialog.closest('[data-sheet-scroll]')
+  if (scroller)
+    // vx-bot/NOTE: jsdom does not emit the native scroll completion that enables Sheet focus and dismissal.
+    await act(async () => {
+      fireEvent(scroller, new Event('scrollend'))
+    })
+}
+
 describe('Demo Control Center', () => {
   let originalDirection: string | null
   let originalLanguage: string | null
@@ -95,6 +104,7 @@ describe('Demo Control Center', () => {
       let trigger: HTMLElement
       if (mobile) {
         accountSheet = await screen.findByRole('dialog', { name: 'Account' })
+        await finishSheetEnter(accountSheet)
         trigger = within(accountSheet).getByRole('button', {
           name: 'Control center'
         })
@@ -106,7 +116,8 @@ describe('Demo Control Center', () => {
       const dialog = await screen.findByRole('dialog', {
         name: 'Control Center'
       })
-      expect(Boolean(dialog.closest('[data-slot="sheet-backdrop"]'))).toBe(
+      await finishSheetEnter(dialog)
+      expect(Boolean(dialog.closest('[data-slot="sheet-overlay"]'))).toBe(
         mobile
       )
       // vx-bot/NOTE: Demo includes multiple appearance tiles; exercise the same toggle in both directions.

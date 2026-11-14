@@ -1,6 +1,7 @@
 import { RouterProvider, createMemoryHistory } from '@tanstack/react-router'
 import {
   act,
+  cleanup,
   fireEvent,
   render,
   screen,
@@ -23,11 +24,25 @@ const renderApp = async (path = '/') => {
   })
 
   await router.load()
-  return { ...render(<RouterProvider router={router} />), router }
+  return {
+    ...render(<RouterProvider router={router} />, { container: document }),
+    router
+  }
 }
 
 describe('App', () => {
-  afterEach(() => vi.restoreAllMocks())
+  afterEach(() => {
+    cleanup()
+    vi.restoreAllMocks()
+    if (!document.documentElement) {
+      const html = document.createElement('html')
+      html.append(
+        document.createElement('head'),
+        document.createElement('body')
+      )
+      document.append(html)
+    }
+  })
 
   beforeAll(() => {
     Element.prototype.getAnimations = () => []

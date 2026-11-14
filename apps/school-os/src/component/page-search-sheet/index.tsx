@@ -1,5 +1,4 @@
-import { Sheet } from '@vezham/react-pro-v3'
-import { SearchField } from '@vezham/react-v3'
+import { SearchField, Sheet } from '@vezham/react-v3'
 
 type Props = {
   isOpen: boolean
@@ -18,12 +17,7 @@ export const PageSearchSheet = ({
   placeholder = 'Search',
   query
 }: Props) => (
-  <Sheet
-    isOpen={isOpen}
-    placement="bottom"
-    isHandleOnly
-    shouldAutoFocus
-    onOpenChange={onOpenChange}>
+  <Sheet isOpen={isOpen} placement="bottom" onOpenChange={onOpenChange}>
     <Sheet.Backdrop
       variant="blur"
       className="bg-overlay/10 z-80 backdrop-blur-xs">
