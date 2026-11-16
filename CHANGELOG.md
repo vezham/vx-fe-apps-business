@@ -1,3 +1,7 @@
+## 27.0.1 (2026-11-16)
+
+This was a version bump only, there were no code changes.
+
 ## 26.27.0 (2026-11-15)
 
 ### 🚀 Features
