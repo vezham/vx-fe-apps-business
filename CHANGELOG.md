@@ -1,3 +1,21 @@
+## 27.0.2 (2026-11-18)
+
+### 🏡 Chore
+
+- **release:** publish 27.0.0-alpha.2 ([c7000cb](https://github.com/vezham/vx-fe-apps-business/commit/c7000cb))
+- **release:** publish 27.0.0 ([4765e39](https://github.com/vezham/vx-fe-apps-business/commit/4765e39))
+- **repo:** update Nx to 24.0.5 ([9cfc761](https://github.com/vezham/vx-fe-apps-business/commit/9cfc761))
+- **workspace:** update v27 dependencies ([b49a0a1](https://github.com/vezham/vx-fe-apps-business/commit/b49a0a1))
+
+### 🎨 Styles
+
+- **school-os:** wrap dark image srcsets ([5325e0f](https://github.com/vezham/vx-fe-apps-business/commit/5325e0f))
+
+### ❤️ Thank You
+
+- v0xvigneshwaran
+- vx-vigneshwaran
+
 ## 27.0.1 (2026-11-16)
 
 This was a version bump only, there were no code changes.
